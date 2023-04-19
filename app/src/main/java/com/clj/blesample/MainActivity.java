@@ -107,6 +107,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return adapter;
     }
 
+    private FragmentManager fragmentManager;
+    private FragmentTransaction fragmentTransaction;
+    private Fragment selectedFragment = null;
+
+    private int state = 0;
+
     // 蓝牙FastBle的初始化
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -186,6 +192,116 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             mBluetoothAdapter.enable();
         }
 
+
+
+        fragmentManager = getSupportFragmentManager();
+        realDataFragment = new RealDataFragment();
+        realDataFragmentNew = new RealDataFragmentNew();
+        deviceConnectFragment = new DeviceConnectFragment();
+        deviceSettingFragment = new DeviceSettingFragment();
+
+        // 默认显示实时数据页面中的一个Fragment
+        if (state == 0) {
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, realDataFragment);
+            fragmentTransaction.commit();
+        } else if (state == 1) {
+            fragmentTransaction = fragmentManager.beginTransaction();
+            fragmentTransaction.replace(R.id.fragment_container, realDataFragmentNew);
+            fragmentTransaction.commit();
+        }
+
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        toolbar.setLogo(R.mipmap.logo1);
+        toolbar.setTitle("");
+        setSupportActionBar(toolbar);
+
+
+
+        /**
+         * 下方的导航栏
+         */
+        mBv = (BottomNavigationView) findViewById(R.id.bv);
+        mVp = (ViewPager) findViewById(R.id.vp);
+//        BottomNavigationViewHelper.disableShiftMode(mBv);
+        mVp.setOffscreenPageLimit(2);
+
+        //这里可true是一个消费过程，同样可以使用break，外部返回true也可以
+        mBv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                state = ((MyApplication) getApplication()).getState();
+                switch (item.getItemId()) {
+                    case R.id.item_real_data:
+                        System.out.println("MainActivity的state:"+state);
+                        if (state == 0) {
+                            selectedFragment = new RealDataFragment();
+                        } else if (state == 1) {
+                            selectedFragment = new RealDataFragmentNew();
+                        }
+
+                        System.out.println("你点击可realdata");
+
+                        mVp.setCurrentItem(0);
+                        break;
+
+                    case R.id.item_device_connect:
+                        System.out.println("你点击可deviceConnect");
+                        selectedFragment = new DeviceConnectFragment();
+                        mVp.setCurrentItem(1);
+                        break;
+
+                    case R.id.item_device_setting:
+                        System.out.println("你点击可deviceSetting");
+                        selectedFragment = new DeviceSettingFragment();
+                        mVp.setCurrentItem(2);
+                        break;
+                }
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+                return true;
+            }
+        });
+
+
+        // 数据填充，静态设置所有的Fragment
+        setupViewPager(mVp);
+        mVp.setCurrentItem(0);
+        //ViewPager监听
+        mVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
+            }
+
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+            @Override
+            public void onPageSelected(int position) {
+                System.out.println("这里是滑动页面" + position);
+                switch (position) {
+                    case 0:
+                        if (state == 0) {
+//                            realDataFragment.onResume();
+                        } else if (state == 1) {
+//                            realDataFragmentNew.onResume();
+                        }
+                        break;
+                    case 1:
+                        break;
+                    case 2:
+                        deviceSettingFragment.onResume();
+                        break;
+
+                }
+                mBv.getMenu().getItem(position).setChecked(true);
+            }
+
+            @Override
+            public void onPageScrollStateChanged(int state) {
+
+            }
+        });
+
     }
 
 
@@ -193,6 +309,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     protected void onResume() {
         super.onResume();
         System.out.println("MainActivity中的onResume()方法");
+
+        state = ((MyApplication) getApplication()).getState();
+        System.out.println("MainActivity页面的state:"+state);
 
     }
 
@@ -249,121 +368,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         /**
          * 上方的ToolBar
          */
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-//        toolbar.setLogo(R.mipmap.logo1);
-        toolbar.setTitle("");
-        setSupportActionBar(toolbar);
 
-
-        /**
-         * 下方的导航栏
-         */
-        mBv = (BottomNavigationView) findViewById(R.id.bv);
-        mVp = (ViewPager) findViewById(R.id.vp);
-//        BottomNavigationViewHelper.disableShiftMode(mBv);
-        mVp.setOffscreenPageLimit(2);
-
-        //这里可true是一个消费过程，同样可以使用break，外部返回true也可以
-        mBv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                switch (item.getItemId()) {
-                    case R.id.item_real_data:
-                        System.out.println("你点击可realdata");
-                        if (realDataFragment.isAdded()) {
-                            System.out.println("RealDataFragment已经存在");
-                            realDataFragment.onResume();
-                        }
-                        if (deviceConnectFragment.isAdded()) {
-                            System.out.println("deviceConnectFragment已经存在");
-                        }
-                        if (deviceSettingFragment.isAdded()) {
-                            System.out.println("deviceSettingFragment已经存在");
-                        }
-                        mVp.setCurrentItem(0);
-                        break;
-
-                    case R.id.item_device_connect:
-                        System.out.println("你点击可deviceConnect");
-                        if (realDataFragment.isAdded()) {
-                            System.out.println("RealDataFragment已经存在");
-                        }
-                        if (deviceSettingFragment.isAdded()) {
-                            System.out.println("deviceSettingFragment已经存在");
-                        }
-                        mVp.setCurrentItem(1);
-                        break;
-
-                    case R.id.item_device_setting:
-                        System.out.println("你点击可deviceSetting");
-                        if (realDataFragment.isAdded()) {
-                            System.out.println("RealDataFragment已经存在");
-                        }
-                        if (deviceConnectFragment.isAdded()) {
-                            System.out.println("deviceConnectFragment已经存在");
-                        }
-                        if (deviceSettingFragment.isAdded()) {
-                            System.out.println("deviceSettingFragment已经存在");
-                            deviceSettingFragment.onResume();
-                        }
-                        mVp.setCurrentItem(2);
-                        break;
-
-//                    case R.id.item_real_data_new:
-//                        System.out.println("你点击可realdata");
-//                        if (deviceSettingFragment.isAdded()) {
-//                            System.out.println("deviceSettingFragment已经存在");
-//                            deviceSettingFragment.onResume();
-//                        }
-//                        mVp.setCurrentItem(3);
-//                        break;
-                }
-                return true;
-            }
-        });
-
-        //禁止ViewPager滑动
-//        mVp.setOnTouchListener(new View.OnTouchListener() {
-//                    @Override
-//                    public boolean onTouch(View v, MotionEvent event) {
-//                        return true;
-//                    }
-//                });
-
-        // 数据填充，静态设置所有的Fragment
-        setupViewPager(mVp);
-        mVp.setCurrentItem(0);
-        //ViewPager监听
-        mVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
-            @Override
-            public void onPageSelected(int position) {
-                System.out.println("这里是滑动页面" + position);
-                switch (position) {
-                    case 0:
-                        realDataFragment.onResume();
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        deviceSettingFragment.onResume();
-                        break;
-
-                }
-                mBv.getMenu().getItem(position).setChecked(true);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
 
 
         /**
@@ -401,15 +406,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     //
     private void setupViewPager(ViewPager viewPager) {
         adapter = new BottomAdapter(getSupportFragmentManager());
-        adapter.addFragment(new RealDataFragment());
+        if (state == 0) {
+            adapter.addFragment(new RealDataFragment());
+        } else if (state == 1) {
+            adapter.addFragment(new RealDataFragmentNew());
+        }
         adapter.addFragment(new DeviceConnectFragment());
         adapter.addFragment(new DeviceSettingFragment());
-//        adapter.addFragment(new RealDataFragmentNew());//新设备
         viewPager.setAdapter(adapter);
         manager = getSupportFragmentManager();
-        realDataFragment = (RealDataFragment) adapter.getItem(0);
-        deviceConnectFragment = (DeviceConnectFragment) adapter.getItem(1);
-        deviceSettingFragment = (DeviceSettingFragment) adapter.getItem(2);
+        if (state == 0) {
+            realDataFragment = (RealDataFragment) adapter.getItem(0);
+            deviceConnectFragment = (DeviceConnectFragment) adapter.getItem(1);
+            deviceSettingFragment = (DeviceSettingFragment) adapter.getItem(2);
+        } else if (state == 1) {
+            realDataFragmentNew = (RealDataFragmentNew) adapter.getItem(0);
+            deviceConnectFragment = (DeviceConnectFragment) adapter.getItem(1);
+            deviceSettingFragment = (DeviceSettingFragment) adapter.getItem(2);
+        }
     }
 
     private void setPermissions() {
@@ -483,5 +497,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.first_menu, menu);
         return true;
+    }
+
+
+
+    private void switchRealDataFragment() {
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction transaction = fragmentManager.beginTransaction();
+        Fragment fragment;
+
+        if (state == 0) {
+            fragment = new RealDataFragment();
+        } else {
+            fragment = new RealDataFragmentNew();
+        }
+
+        transaction.replace(R.id.fragment_container, fragment);
+        transaction.commit();
     }
 }

@@ -72,6 +72,8 @@ public class MyApplication extends Application {
 
     private int[] mutilSensor = {9,7,2,3,4,5,6,7};
 
+    private int state = 0; //0为老版本蓝精灵，1为新版本蓝精灵
+
 
 
 
@@ -361,6 +363,14 @@ public class MyApplication extends Application {
 
     public void setMutilSensor(int[] mutilSensor) {
         this.mutilSensor = mutilSensor;
+    }
+
+    public void setState(int state){
+        this.state = state;
+    }
+
+    public int getState(){
+        return state;
     }
 
     // 初始化多参数配置

@@ -118,6 +118,28 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
     private View usableTitle;
 
 
+    private BleDevice bleDevice;
+    private BleManager bleManager;
+    private BluetoothGatt gatt;
+    private BluetoothGattService service;
+    private BluetoothGattCharacteristic characteristic;
+    private BluetoothGattCharacteristic characteristicRead;
+    private int chipType = 0; // 芯片类型
+
+    private Boolean globalDeviceIsConnect; // 设备是否连接
+    private String globalDeviceName; // 全局的设备名称
+    private int globalDeviceAddress; // 全局的设备地址
+    private int globalDeviceType; // 全局的设备类型
+
+    private ProgressDialog progressDialogReal;
+    private Runnable runnable;
+    private Handler handler;
+    private Boolean isF5Success = false;
+
+    private Button test_btn;
+    public static int state = 0;
+
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
@@ -137,6 +159,7 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
         deviceName2 = v.findViewById(R.id.txt_name2);
         deviceName3 = v.findViewById(R.id.txt_name3);
         usableTitle = v.findViewById(R.id.usable_title);
+
 
         return view;
     }
@@ -521,6 +544,8 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
                                                                                             //通过设置全局变量修改实时数据fragment
                                                                                             System.out.println("执行切换碎片语句");
                                                                                             GlobalData.isNewDevice = true;
+                                                                                            state = 1;
+                                                                                            ((MyApplication)getActivity().getApplication()).setState(state);
                                                                                             BottomAdapter adapter = ((MainActivity) getActivity()).getAdapter();
                                                                                             adapter.updateFragment(0,new RealDataFragmentNew());
 //                                                                                                System.out.println(adapter.getFragments());
@@ -931,6 +956,95 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
                     }
                 });
     }
+
+    public void getSmurfType(){
+        final String hex = "f5"; //发送F5指令
+        final boolean[] isNum = {false};
+        final String[] historyDataNumber = {""};
+        final int[] basicNum = {65536};
+        final int[] lengthNum = {0};
+        new Handler().postDelayed(new Runnable() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+            @Override
+            public void run() {
+
+                BleManager.getInstance().write(bleDevice, characteristic.getService().getUuid().toString(),
+                        characteristic.getUuid().toString(),
+                        HexUtil.hexStringToBytes(hex),
+                        new BleWriteCallback() {
+
+                            @Override
+                            public void onWriteSuccess(int current, int total, byte[] justWrite) {
+                                System.out.println("write success, current: " + current
+                                        + " total: " + total
+                                        + " justWrite: " + HexUtil.formatHexString(justWrite, true));
+
+                                isF5Success = true;
+
+                                BleManager.getInstance().notify(
+                                        bleDevice,
+                                        characteristicRead.getService().getUuid().toString(),
+                                        characteristicRead.getUuid().toString(),
+                                        new BleNotifyCallback() {
+
+                                            @Override
+                                            public void onNotifySuccess() {
+                                                getActivity().runOnUiThread(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        System.out.println("读取f5蓝精灵类型");
+                                                    }
+                                                });
+                                            }
+
+                                            @Override
+                                            public void onNotifyFailure(final BleException exception) {
+                                                getActivity().runOnUiThread(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        System.out.println("f5指令写入失败：" + exception.toString());
+                                                    }
+                                                });
+                                            }
+
+                                            @Override
+                                            public void onCharacteristicChanged(final byte[] data) {
+                                                getActivity().runOnUiThread(new Runnable() {
+                                                    @Override
+                                                    public void run() {
+                                                        String s1 = HexUtil.byteToString(data);
+                                                        System.out.println("获取到的数据s1："+s1);
+                                                        String s2 = s1.substring(1, s1.length() - 1);
+                                                        System.out.println("s2的值为："+s2);
+                                                        if (s2.contains("MANY")){
+                                                            System.out.println("接收到MANY");
+                                                            state = 1;
+                                                            ((MyApplication)getActivity().getApplication()).setState(state);
+
+                                                        }else {
+                                                            state = 0;
+                                                            ((MyApplication)getActivity().getApplication()).setState(state);
+                                                        }
+                                                    }
+
+                                                });
+                                            }
+                                        });
+
+                            }
+
+                            @Override
+                            public void onWriteFailure(BleException exception) {
+                                System.out.println("写入指令失败：" + exception);
+                            }
+                        });
+
+            }
+
+        },1000);
+
+    }
+
 
 
 }

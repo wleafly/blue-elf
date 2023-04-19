@@ -30,7 +30,7 @@ import com.clj.blesample.activity.TroubleShootingActivity;
 import com.clj.blesample.adapter.DeviceAdapter;
 import com.clj.blesample.application.MyApplication;
 
-public class DeviceSettingFragment extends Fragment {
+    public class DeviceSettingFragment extends Fragment {
 
     private DeviceAdapter mDeviceAdapter;
     private DeviceConnectFragment deviceConnectFragment;
@@ -267,5 +267,7 @@ public class DeviceSettingFragment extends Fragment {
         super.setUserVisibleHint(isVisibleToUser);
         isVisible = isVisibleToUser;
     }
+
+
 
 }
