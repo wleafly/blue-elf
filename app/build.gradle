@@ -1,0 +1,49 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 27
+    buildToolsVersion '27.0.3'
+
+    defaultConfig {
+        applicationId "com.clj.blesample"
+        minSdkVersion 14
+        targetSdkVersion 27
+        versionCode 233
+        versionName "2.4.12"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    // 支持 JDK 1.8
+    compileOptions {
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support:gridlayout-v7:27.1.1'
+    implementation 'com.android.support:design:27.1.1'
+    testImplementation 'junit:junit:4.13.2'
+    implementation 'com.android.support:appcompat-v7:27.1.1'
+    implementation project(':FastBleLib')
+    compile 'com.android.support:design:27.1.1'
+}
+
+repositories {
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.PhilJay:MPAndroidChart:v3.1.0'
+    compile 'com.github.recruit-lifestyle:WaveSwipeRefreshLayout:1.5'
+    implementation 'com.github.getActivity:XXPermissions:10.8'
+    implementation 'com.github.lecho:hellocharts-android:v1.5.6'
+    compile 'com.github.onlynight:WaveView:1.0.0'
+
+    implementation group: 'net.sourceforge.jexcelapi', name: 'jxl', version: '2.6.12'
+}

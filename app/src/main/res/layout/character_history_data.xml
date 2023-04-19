@@ -1,0 +1,1291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:theme="@style/AppTheme.PopupOverlay"/>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    android:scrollbars="none">
+
+    <LinearLayout
+        android:id="@+id/history_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="10dp"
+        android:background="@color/background_gray"
+        android:orientation="vertical">
+
+<!--        测试      -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#ffffff"
+            android:elevation="5dp"
+            android:orientation="vertical">
+            <!--  单参数  -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/single_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:text="@string/data_singleparameter">
+                </TextView>
+                <!--  第一行  -->
+                <LinearLayout
+                    android:id="@+id/single_layout_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/single_EC1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_EC1">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_EC2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_EC2">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_PH"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="PH">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_ORP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="ORP">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_RDO"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_DO">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_NHN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_NH4">
+                    </TextView>
+                </LinearLayout>
+                <!--  第2行  -->
+                <LinearLayout
+                    android:id="@+id/single_layout_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/single_COD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="COD">
+                    </TextView>
+
+                    <TextView
+                        android:id="@+id/single_COD_ZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_COD_ZS">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_COD_BOD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="BOD">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_ZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_ZS">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_RC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_residual_chlorine">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_SAL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_salinity">
+                    </TextView>
+                </LinearLayout>
+                <!--  第3行  -->
+                <LinearLayout
+                    android:id="@+id/single_layout_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/single_CH"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_Chlorophyl">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_CY"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_blue_green_algae">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_TSS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_Transparency">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_TSM"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_Suspended_Solids">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/single_OW"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_oil_in_water">
+                    </TextView>
+
+                </LinearLayout>
+                <!--  第4行  -->
+                <LinearLayout
+                    android:id="@+id/single_layout_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+                <!--  第5行  -->
+                <LinearLayout
+                    android:id="@+id/single_layout_5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="horizontal">
+                </LinearLayout>
+
+            </LinearLayout>
+            <!-- 多参数 -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginBottom="10dp"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/mutil_layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:text="@string/data_multiparameter">
+
+                </TextView>
+                <!--   第1行   -->
+                <LinearLayout
+                    android:id="@+id/mutil_layout_1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/mutil_TEMP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_temperature">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/mutil_COD"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="COD">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/mutil_COD_ZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_COD_ZS">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/mutil_EC_OR_SAL"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_EC_salinity">
+                    </TextView>
+                </LinearLayout>
+                <!--   第2行   -->
+                <LinearLayout
+                    android:id="@+id/mutil_layout_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:orientation="horizontal">
+                    <TextView
+                        android:id="@+id/mutil_PH"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="PH">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/mutil_ORP"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="ORP">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/mutil_RDO"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_DO">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/mutil_NHN"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_NH4">
+                    </TextView>
+                    <TextView
+                        android:id="@+id/mutil_ZS"
+                        android:layout_width="wrap_content"
+                        android:layout_height="20dp"
+                        android:layout_marginRight="15dp"
+                        android:textSize="16dp"
+                        android:textColor="#514F4F"
+                        android:text="@string/data_ZS">
+                    </TextView>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/data_list"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="数据列表"
+                android:textSize="16dp"
+                android:textColor="@color/purple_500"
+                android:background="@drawable/textview_bottom_border">
+            </TextView>
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/data_line"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="折线图"
+                android:textSize="16dp"
+                android:textColor="@color/black">
+            </TextView>
+<!--            <TextView-->
+<!--                android:id="@+id/data_rank"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:text="排名图"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textColor="@color/black">-->
+<!--            </TextView>-->
+<!--            <TextView-->
+<!--                android:id="@+id/data_distribute"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="50dp"-->
+<!--                android:layout_weight="1"-->
+<!--                android:gravity="center"-->
+<!--                android:text="分布曲线图"-->
+<!--                android:textSize="16dp"-->
+<!--                android:textColor="@color/black">-->
+<!--            </TextView>-->
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1">
+                <TextView
+                    android:id="@+id/data_total"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:text="@string/data_total">
+                </TextView>
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+                <TextView
+                    android:id="@+id/data_valid"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_EC1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="gone"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_EC2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_PH"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_ORP"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_RDO"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_NHN"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_ZS"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_SAL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_COD"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_RC"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_CH"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_CY"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_TSS"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_TSM"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_OW"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+                <TextView
+                    android:id="@+id/data_valid_MUTIL"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="16dp"
+                    android:padding="5dp"
+                    android:visibility="visible"
+                    android:text="@string/data_total_effective">
+                </TextView>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:visibility="gone"
+            android:id="@+id/list_layout"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:paddingRight="10dp"
+            android:layout_margin="10dp"
+            android:layout_marginTop="10dp"
+            android:fadeScrollbars="true"
+            android:scrollbars="vertical"
+            android:background="@drawable/layout_border_style"
+            android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/list_chart"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:fadeScrollbars="true"
+                    android:padding="10dp"
+                    android:layout_marginLeft="10dp"
+                    android:singleLine="false"
+                    android:scrollbars="vertical"
+                    android:textSize="15sp"
+                    android:lineSpacingExtra="10dp"
+                    android:text=""/>
+
+
+        </ScrollView>
+
+        <!--   折线图    -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:background="@drawable/layout_border_style_shadow"
+            android:elevation="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:orientation="horizontal">
+                <TextView
+                    android:id="@+id/linechart_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="@string/real_data"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textColor="@color/black"
+                    android:textSize="16dp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_EC1_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:textColor="#514F4F"
+                    android:visibility="gone"
+                    android:text="@string/data_EC1_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_EC2_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_EC2_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_PH_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_PH_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_RDO_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_DO_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_NHN_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_NH_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_ZS_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_ZS_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_COD_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:text="@string/data_COD_Temp"
+                    android:textColor="#514F4F">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_CH_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_Chlorophyl_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_RC_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_residual_chlorine_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_CY_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_blue_green_algae_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_TSS_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_Transparency_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_TSM_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_Suspended_Solids_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_OW_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_oil_in_water_Temp">
+                </TextView>
+                <TextView
+                    android:id="@+id/single_SAL_temp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="10dp"
+                    android:textSize="16dp"
+                    android:visibility="gone"
+                    android:textColor="#514F4F"
+                    android:text="@string/data_salinity_Temp">
+                </TextView>
+            </LinearLayout>
+
+
+
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"/>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart0"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+<!--            COD   -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_cod"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+<!--            COD内置浊度   -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_cod_nt"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+<!--            多参数电导率   -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_ec"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+<!--            多参数PH   -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_ph"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+<!--            多参数ORP   -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_orp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+<!--            多参数溶解氧   -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_do"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+<!--            多参数氨氮   -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_nh"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+<!--            多参数浊度   -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_nt"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数电导率1  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_EC1"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数电导率1温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_EC1_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数电导率2  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_EC2"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数电导率2温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_EC2_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数PH  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_PH"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数PH温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_PH_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数ORP  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_ORP"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数溶解氧  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_RDO"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数溶解氧温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_RDO_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数氨氮  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_NHN"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数氨氮温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_NHN_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数盐度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_SAL"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数盐度温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_SAL_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数浊度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_ZS"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数浊度温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_ZS_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数COD  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_COD"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数COD温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_COD_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数COD内置浊度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_COD_ZS"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数COD内置BOD  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_COD_BOD"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数余氯  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_RC"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数余氯温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_RC_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数叶绿素  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_CH"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数叶绿素温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_CH_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数蓝绿藻  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_CY"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数蓝绿藻温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_CY_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数透明度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_TSS"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数透明度温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_TSS_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数悬浮物  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_TSM"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数悬浮物温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_TSM_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数水中油  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_OW"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+            <!-- 单参数水中油温度  -->
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart_single_OW_temp"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:visibility="gone"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/delete_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/button_style_real_time_data"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="40dp"
+                android:text="@string/history_data_delete_activity"
+                />
+            <Button
+                android:id="@+id/download_history"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:background="@drawable/button_style_real_time_data"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="40dp"
+                android:text="@string/history_data_download"
+                />
+
+        </LinearLayout>
+
+        <!--    排名图    -->
+        <LinearLayout
+            android:id="@+id/horizontalBar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/layout_border_style"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <com.github.mikephil.charting.charts.HorizontalBarChart
+                android:id="@+id/mHorizontalBarChart"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>
+
+</LinearLayout>

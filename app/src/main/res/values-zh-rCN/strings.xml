@@ -1,0 +1,336 @@
+<resources>
+    <string name="app_name">蓝精灵</string>
+    <string name="main_name">蓝精灵 Smurfs</string>
+
+    <string name="notifyTitle">提示</string>
+    <string name="gpsNotifyMsg">当前手机扫描蓝牙需要打开定位功能。</string>
+    <string name="storage" translatable="false">蓝牙数据存储需要打开手机存储权限和位置权限，点击前往设置找到APP蓝牙BLE，在权限中打开存储</string>
+    <string name="storage2" translatable="false">APP需要打开手机上方导航栏位置信息按钮</string>
+    <string name="setting">前往设置</string>
+    <string name="cancel">取消</string>
+    <string name="start_scan">开始扫描</string>
+    <string name="stop_scan">停止扫描</string>
+    <string name="expand_search_settings">展开搜索设置</string>
+    <string name="retrieve_search_settings">收起搜索设置</string>
+    <string name="connect_fail">连接失败</string>
+    <string name="active_disconnected">断开了</string>
+    <string name="disconnected">连接断开</string>
+    <string name="please_open_blue">请先打开蓝牙</string>
+    <string name="select_operation_type">选择操作类型</string>
+    <string name="characteristic">特性</string>
+    <string name="data_changed">的数据变化：</string>
+    <string name="read">读/存</string>
+    <string name="read_only">只读</string>
+    <string name="write">写</string>
+    <string name="open_notification">打开通知</string>
+    <string name="open_notification_only">打开通知(只读)</string>
+    <string name="export_data" translatable="false">导出文本</string>
+    <string name="close_notification">关闭通知</string>
+    <string name="close_notification_only">关闭通知(只读)</string>
+    <string name="service_list">服务列表</string>
+    <string name="characteristic_list">特征列表</string>
+    <string name="console">操作控制台</string>
+    <string name="name">设备名称：</string>
+    <string name="mac">MAC:</string>
+    <string name="service">服务</string>
+    <string name="type">服务类型(主服务)</string>
+    <string name="scan_setting">在下面你可以配置需要扫描的设备的条件，可以为空</string>
+    <string name="setting_name">输入蓝牙设备广播名，多个之间以英文逗号隔开</string>
+    <string name="setting_mac">输入蓝牙设备mac地址</string>
+    <string name="setting_uuid">输入蓝牙设备UUID，多个之间以英文逗号隔开</string>
+    <string name="input_hex">请输入HEX格式指令</string>
+    <string name="connect">连接</string>
+    <string name="connected">已连接</string>
+    <string name="disconnect">断开连接</string>
+    <string name="enter">进入操作</string>
+    <string name="success">成功</string>
+
+
+    <!--  MainActivity  -->
+    <string name="permisson_not_open">权限识别未打开</string>
+    <string name="permisson_open">蓝精灵需要使用到存储权限和位置权限</string>
+    <string name="permisson_to_open">前往立即打开</string>
+
+    <!--  AlarmDeviceActivity  -->
+    <string name="alarm_activity">报警输出</string>
+
+    <!--  DeviceAboutActivity  -->
+    <string name="about_activity">关于APP</string>
+
+    <!--  DeviceFunctionActivity  -->
+    <string name="function_activity">功能描述</string>
+
+    <!--  DeviceNameSetActivity  -->
+    <string name="name_set_activity">设备名称修改</string>
+    <string name="device_name">设备名称</string>
+    <string name="password_write_fail">密码写入失败</string>
+    <string name="ensure">确定</string>
+    <string name="device_name_not_empty">新的设备名不能为空</string>
+    <string name="resume_load">重新输入</string>
+    <string name="device_name_set_success">设备名重置成功,退出系统或者重新连接生效</string>
+    <string name="device_name_set_success2">设备名重置成功,重启设备生效</string>
+    <string name="device_name_too_long">新的设备名称过长，请重新输入</string>
+    <string name="device_name_too_short">新的设备名称过短，请重新输入</string>
+    <string name="device_name_being_modify">设备名称修改中......</string>
+
+    <!--  DeviceOrderSet2Activity  -->
+    <string name="data_order2_activity">数据校准2</string>
+    <string name="change_device_address">更改设备地址</string>
+    <string name="device_address_changing">更改地址指令写入中...</string>
+    <string name="write_success">写入成功</string>
+    <string name="write_fail">写入失败</string>
+    <string name="operation_fail">操作失败，请稍后重试...</string>
+    <string name="init">初始化</string>
+    <string name="init_device_address_type">初始化地址和设备类型</string>
+    <string name="select_write">确定要进行写入操作吗？</string>
+    <string name="order_error">指令错误</string>
+    <string name="get_address_success">获取地址成功！！！</string>
+
+    <!--  DeviceOrderSetActivity  -->
+    <string name="data_order_activity">数据校准</string>
+    <string name="select_correct_type">选择校准类型</string>
+    <string name="zero_calibration">零点校准</string>
+    <string name="slope_calibration">斜率校准</string>
+    <string name="empty_to_resume_load">输入的信息不能为空！请重新输入</string>
+    <string name="out_to_resume_load">数据超出范围！请重新输入</string>
+    <string name="order_set_success">指令修改成功！</string>
+    <string name="order_set_fail">指令修改失败！</string>
+    <string name="temp_order">温度校准</string>
+    <string name="temp_order_writing">温度校准指令写入中</string>
+    <string name="get_address">获取地址</string>
+    <string name="get_address_writing">获取地址指令写入中</string>
+    <string name="get_address_fail">获取地址失败！！！</string>
+    <string name="decimal_number_too_long">小数点后位数不能大于1</string>
+    <string name="decimal_number_error">小数点个数不正确</string>
+    <string name="decimal_number_equals_zero">小数点后位数不能等于0</string>
+    <string name="data_format_error">数据格式错误</string>
+    <string name="invalid_argument">不能进行这样的操作</string>
+
+
+    <!--  DeviceTimeSetActivity  -->
+    <string name="time_set_activity">测试时间设置</string>
+    <string name="time_set_resume_load">间隔时间不能小于测试时间，请重新输入！</string>
+
+    <!--  HistoryDataActivity  -->
+    <string name="history_data_activity">历史数据</string>
+    <string name="data_init">----</string>
+    <string name="device_ununited">设备未连接</string>
+    <string name="data_not_obtained">数据未获取</string>
+    <string name="data_temperature">温度</string>
+    <string name="data_PH">PH</string>
+    <string name="data_PH_Temp">PH温度</string>
+    <string name="data_EC">电导率</string>
+    <string name="data_EC1">电导率μS</string>
+    <string name="data_EC1_Temp">电导率μS温度</string>
+    <string name="data_EC2">电导率mS</string>
+    <string name="data_EC2_Temp">电导率mS温度</string>
+    <string name="data_DO">溶解氧</string>
+    <string name="data_DO_Temp">溶解氧温度</string>
+    <string name="data_NH">铵氮/离子类</string>
+    <string name="data_NH_Temp">铵氮/离子类温度</string>
+    <string name="data_ZS">浊度</string>
+    <string name="data_ZS_Temp">浊度温度</string>
+    <string name="ununited">未连接</string>
+    <string name="data_ORP">氧化还原电位(ORP)</string>
+    <string name="data_COD">化学需氧量(COD)</string>
+    <string name="data_COD_Temp">COD温度</string>
+    <string name="data_salinity">盐度</string>
+    <string name="data_salinity_Temp">盐度温度</string>
+    <string name="data_residual_chlorine">余氯</string>
+    <string name="data_residual_chlorine_Temp">余氯温度</string>
+    <string name="data_Chlorophyl">叶绿素</string>
+    <string name="data_Chlorophyl_Temp">叶绿素温度</string>
+    <string name="data_blue_green_algae">蓝绿藻</string>
+    <string name="data_blue_green_algae_Temp">蓝绿藻温度</string>
+    <string name="data_Transparency">透明度</string>
+    <string name="data_Transparency_Temp">透明度温度</string>
+    <string name="data_Suspended_Solids">悬浮物</string>
+    <string name="data_Suspended_Solids_Temp">悬浮物温度</string>
+    <string name="data_oil_in_water">水中油</string>
+    <string name="data_oil_in_water_Temp">水中油温度</string>
+    <string name="data_total">总数据条数：</string>
+    <string name="data_total_effective">属性数据条数：</string>
+    <string name="data_number">条</string>
+    <string name="no_data">无数据</string>
+    <string name="data_multiparameter">多参数</string>
+    <string name="attribute">属性</string>
+    <string name="data_COD_0">COD</string>
+    <string name="data_COD_ZS">浊度(COD)</string>
+    <string name="data_ORP_0">ORP</string>
+    <string name="data_EC_salinity">电导率/盐度</string>
+    <string name="data_NH4">铵氮/离子类</string>
+    <string name="data_singleparameter">单参数</string>
+    <string name="parameter_values">参数值</string>
+    <string name="file_in">下载的文件在</string>
+    <string name="file_folder"> /sdcard/蓝牙 </string>
+    <string name="file_open">文件夹下，是否打开文件管理？</string>
+
+    <!--  HistoryDataDeleteActivity  -->
+    <string name="history_data_delete_activity">历史数据清除</string>
+    <string name="history_data_delete_confirm">确认删除历史数据吗？</string>
+    <string name="history_data_delete_success">数据删除成功</string>
+    <string name="history_data_delete_fail">数据删除失败</string>
+    <string name="history_data_download">历史数据下载</string>
+    <string name="history_data_download_confirm">确认下载历史数据吗？</string>
+    <string name="start_download">开始下载</string>
+    <string name="downloading">下载中</string>
+    <string name="download_success">下载成功</string>
+    <string name="no_valid_data">无有效数据</string>
+    <string name="hour">小时</string>
+    <string name="minute">分钟</string>
+    <string name="seconds">秒</string>
+    <string name="history_data_number_about">存储的历史数据约有</string>
+    <string name="estimated_read_time">条，预计读取花费时间：</string>
+    <string name="read_now">，是否现在读取？</string>
+    <string name="history_data_read">历史数据读取</string>
+    <string name="start_read">开始读取</string>
+    <string name="reading">读取中......</string>
+
+    <!--  LanguageSetActivity  -->
+    <string name="language_set_activity">语言选择</string>
+    <string name="language_set_success">语言选择成功</string>
+    <string name="language_effect">立即生效</string>
+
+    <!--  TimeOrderSetActivity  -->
+    <string name="time_order">时间校准</string>
+    <string name="try_again_later">操作超时，请检查设备连接是否出现问题或者稍后重试！</string>
+    <string name="get_cleaning_time_success">获取设备清洗间隔时间成功</string>
+    <string name="get_cleaning_cycles_success">获取设备清洗圈数成功</string>
+
+    <!--  DeviceConnectFragment  -->
+    <string name="connect_success">连接成功</string>
+    <string name="connect_continue">继续</string>
+
+    <!--  DeviceSettingFragment  -->
+    <string name="please_connect_device">请先连接设备再进行操作</string>
+
+    <!--  RealDataFragment  -->
+    <string name="device_address">设备地址：</string>
+    <string name="device_type">设备类型：</string>
+    <string name="sensor">传感器</string>
+    <string name="init_data">初始化数据</string>
+    <string name="speed_gain_data">数据加速获取中...</string>
+    <string name="interval_time">间隔时间</string>
+    <string name="test_time">测试时间</string>
+    <string name="real_data_gain_fail">实时数据获取失败,请稍后重试</string>
+    <string name="select_skip_order_time">你确定要跳转到时间校准页面吗？</string>
+    <string name="address_gain_fail">读取设备地址失败，请稍后重试</string>
+    <string name="address_gain_success">设备地址获取成功</string>
+    <string name="type_gain_success">传感器类型获取成功</string>
+    <string name="real_data_gain_success">实时数据获取成功</string>
+    <string name="zs_in_cod">COD内置浊度</string>
+    <string name="data_format_issues">传输数据含有错误字符，传输失败!</string>
+    <string name="battery_is_low">电量不足，请充电!</string>
+
+    <!--  MainActivity  -->
+    <string name="again_quit">再按一次退出程序</string>
+
+    <!--  alarm_device  -->
+    <string name="phone">电话号码：</string>
+    <string name="upper_limit">上限：</string>
+    <string name="lower_limit">下限：</string>
+    <string name="redundancy_capability">冗量：</string>
+
+    <!--  character_history_data_delete  -->
+    <string name="delete_range">删除范围：</string>
+    <string name="sensor_all_data">传感器存储的所有数据</string>
+    <string name="history_data_delete_description">描述：数据一经删除，即永久删除，删除的数据不能回滚，请谨慎操作！</string>
+    <string name="delete_confirm">确认删除</string>
+
+    <!--  character_name_set  -->
+    <string name="device_name_range">设备名称范围值：</string>
+    <string name="device_name_range_list">数字、字母</string>
+    <string name="device_name_description">描述：设备名称由数字和字母组成，并且设备名称开头必须是字母，设备名称最少三个字符，最多10个字符！</string>
+    <string name="modify_confirm">确认修改</string>
+    <string name="modify_hint">这里输入新的设备名称</string>
+    <string name="device_name_description_new">新名称包含3-18个数字或字母。</string>
+
+    <!--  character_order_set  -->
+    <string name="order_set_range">校准范围值</string>
+    <string name="order_set_type">校准类型：零点/斜率</string>
+    <string name="order_set_range_data">校准范围：1-65535</string>
+    <string name="order_set_description">描述：在间隔时间范围内，记录测试时间中的最后一条数据</string>
+    <string name="order_confirm">确认校准</string>
+
+    <!--  character_order_set2  -->
+    <string name="modify_device_address">更改地址</string>
+    <string name="temperature_order_set">温度校准:</string>
+    <string name="zero_calibration_order_set">零点校准:</string>
+    <string name="slope_calibration_order_set">斜率校准:</string>
+    <string name="interval_time_order_set">间隔时间:</string>
+    <string name="test_time_order_set">测试时间:</string>
+    <string name="calibration">校准</string>
+    <string name="device_address_0">设备地址</string>
+    <string name="temperature_order_set_0">温度校准</string>
+    <string name="modify">更改</string>
+    <string name="write_in">写入</string>
+    <string name="zero_calibration_order_set_0">零点校准</string>
+    <string name="slope_calibration_order_set_0">斜率校准</string>
+    <string name="modify_address_new">新的设备地址</string>
+    <string name="modify_temp_new">需要校准的温度值</string>
+    <string name="modify_zero_new">零点校准数值</string>
+    <string name="modify_slope_new">斜率校准数值</string>
+    <string name="order_select">校准选择</string>
+
+    <!--  character_time_set  -->
+    <string name="time_set_range">时间范围值</string>
+    <string name="time_set_interval">间隔时间：1-255</string>
+    <string name="time_set_test">测试时间：1-255</string>
+    <string name="time_set_description">描述：在间隔时间范围内，记录测试时间中的最后一条数据</string>
+    <string name="quick_time_set">快捷时间校准</string>
+    <string name="custom_time_set">自定义时间校准</string>
+    <string name="record_per_five_minute">五分钟记录一次</string>
+    <string name="record_per_ten_minute">十分钟记录一次</string>
+    <string name="record_half_hour">半小时记录一次</string>
+    <string name="record_per_hour">每小时记录一次</string>
+    <string name="record_per_two_hour">两小时记录一次</string>
+    <string name="record_per_four_hour">四小时记录一次</string>
+    <string name="interval_time_hint">这里输入间隔时间(单位：分钟)</string>
+    <string name="test_time_hint">这里输入测试时间(单位：分钟)</string>
+    <string name="cleaning_time">自动清洗时间</string>
+    <string name="cleaning_cycles">自动清洗圈数</string>
+    <string name="reset_cleaning_brush">清洁刷重置</string>
+
+    <!--  device_about  -->
+    <string name="version">Version 2.1.0</string>
+    <string name="soft_service">凯米斯软件许可证服务</string>
+    <string name="privacy_protect">《隐私保护指引》</string>
+    <string name="copyright">凯米斯公司 版权所有</string>
+
+    <!--  TroubleShooting  -->
+    <string name="shooting_1">尝试与设备建立连接</string>
+    <string name="shooting_2">连接成功</string>
+    <string name="shooting_3">指令下发成功</string>
+    <string name="shooting_4">数据分析中</string>
+
+    <!--  fragment_notifications  -->
+    <string name="time_calibration">时间校准</string>
+    <string name="about_wisdom_sturgeon">关于蓝精灵</string>
+    <string name="calibration_function">校准功能</string>
+    <string name="trouble_shooting">故障排查</string>
+    <string name="language_select">语言选项</string>
+    <string name="system_set">系统设置</string>
+
+    <!--  language_set  -->
+    <string name="simplified_chinese">简体中文</string>
+    <string name="save">保存</string>
+
+    <!--  real_time_data  -->
+    <string name="refresh">刷新</string>
+    <string name="longitude">经度</string>
+    <string name="latitude">纬度</string>
+    <string name="gps_info_error">gps信号弱</string>
+
+    <!--  first_menu  -->
+    <string name="real_data">实时数据</string>
+    <string name="connect_manage">连接管理</string>
+    <string name="function_setting">设置</string>
+
+    <!--  device_connect_list2  -->
+    <string name="available_equipment">可用设备</string>
+    <string name="connected_devices">已连接的设备</string>
+
+    <!--  SystemSetting    -->
+    <string name="real_data_download_name">实时数据自动下载</string>
+
+</resources>

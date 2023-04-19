@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="correct_type">
+        <item value="1">@string/zero_calibration_order_set_0</item>
+        <item value="2">@string/slope_calibration_order_set_0</item>
+    </string-array>
+    <string-array name="sensor_select">
+        <item value="1">@string/data_COD_0</item>
+        <item value="2">@string/data_COD_ZS</item>
+        <item value="3">@string/data_EC_salinity</item>
+        <item value="4">@string/data_PH</item>
+        <item value="5">@string/data_ORP_0</item>
+        <item value="6">@string/data_DO</item>
+        <item value="7">@string/data_NH4</item>
+        <item value="8">@string/data_ZS</item>
+    </string-array>
+    <string-array name="sensor_select_1">
+        <item value="1">@string/data_COD_0</item>
+        <item value="2">@string/data_COD_ZS</item>
+        <item value="3">@string/data_EC</item>
+        <item value="4">@string/data_PH</item>
+        <item value="5">@string/data_ORP_0</item>
+        <item value="6">@string/data_DO</item>
+        <item value="7">@string/data_NH4</item>
+        <item value="8">@string/data_ZS</item>
+        <item value="9">@string/data_salinity</item>
+        <item value="10">@string/data_residual_chlorine</item>
+        <item value="11">@string/data_Chlorophyl</item>
+        <item value="12">@string/data_blue_green_algae</item>
+        <item value="13">@string/data_Transparency</item>
+        <item value="14">@string/data_Suspended_Solids</item>
+        <item value="15">@string/data_oil_in_water</item>
+    </string-array>
+    <string-array name="mutil_sensor_select_0">
+        <item value="1">@string/data_COD_0</item>
+        <item value="0">@string/ununited</item>
+    </string-array>
+    <string-array name="mutil_sensor_select">
+        <item value="2">@string/data_EC</item>
+        <item value="3">@string/data_PH</item>
+        <item value="4">@string/data_ORP_0</item>
+        <item value="5">@string/data_DO</item>
+        <item value="6">@string/data_NH4</item>
+        <item value="7">@string/data_ZS</item>
+        <item value="8">@string/data_salinity</item>
+        <item value="9">@string/data_residual_chlorine</item>
+        <item value="11">@string/data_Chlorophyl</item>
+        <item value="12">@string/data_blue_green_algae</item>
+        <item value="13">@string/data_Transparency</item>
+        <item value="14">@string/data_Suspended_Solids</item>
+        <item value="15">@string/data_oil_in_water</item>
+        <item value="0">@string/ununited</item>
+    </string-array>
+    <string-array name="sensor_select_PH1">
+        <item value="1">4.00</item>
+        <item value="2">9.18</item>
+    </string-array>
+    <string-array name="sensor_select_PH0">
+        <item value="0">6.86</item>
+    </string-array>
+</resources>

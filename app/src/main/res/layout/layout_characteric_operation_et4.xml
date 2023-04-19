@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_marginTop="50px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="您现在进行的是删除操作:"
+        android:textSize="17dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/colorText">
+    </TextView>
+    <TextView
+        android:layout_marginTop="50px"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="      此项操作将会彻底删除FLASH芯片中存储的所有数据，在使用本功能之前，请确认是否要进行删除操作。如果是误点到了本功能，请点击返回！如果确认删除，请点击下方确认删除按钮！"
+        android:textSize="15dp"
+        android:lineSpacingExtra='5dp'
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textColor="@color/colorText">
+    </TextView>
+    <Button
+        android:layout_marginTop="50px"
+        android:id="@+id/btn"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="确定清除"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:textSize="17dp"
+        android:textColor="@color/colorText"
+        android:background="@drawable/border_line_while"/>
+
+</LinearLayout>

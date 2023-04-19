@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--<resources>-->
+    <paths xmlns:android="http://schemas.android.com/apk/res/android">
+        <root-path name="root"  path="."/>
+        <files-path name="files"  path="."/>
+        <cache-path  name="cachePath"  path="."/>
+        <external-path  name="externalPath"  path="."/>
+        <external-files-path  name="externalFilePath"  path="path" />
+        <external-cache-path  name="externalCachePath"  path="path" />
+    </paths>
+<!--</resources>-->
+<!--
+        1.子节点里面的name表示对外的名字，path表示的是真实路径
+        2.<files-path name="<name>" path="<path>" /> 相当于 Context.getFilesDir()+"/"+<path>
+        3.<cache-path  name="<name>"  path="<path>"/>相当于  Context.getCacheDir() +"/"+<path>
+        4.<external-path  name="<name>"  path="<path>"/> 相当于   Environment.getExternalStorageDirectory() +"/"+<path>
+        5.<external-files-path  name="<name>"  path="<path>"/>相当于 Context#getExternalFilesDir(String) Context.getExternalFilesDir(null)  +"/"+<path>
+        6.<external-cache-path  name="<name>"  path="<path>"/>相当于 Context.getExternalCacheDir()   +"/"+<path>
+        7.<root-path name="<name>"  path="<path>"/>相当于new File("/"), 指向了整个存储的根目录
+-->

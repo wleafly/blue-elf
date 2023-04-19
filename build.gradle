@@ -1,0 +1,30 @@
+ext {
+    var = '3.4.0'
+}
+buildscript {
+    repositories {
+        jcenter()
+        google()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.1.2'
+    }
+}
+
+allprojects {
+    repositories {
+        mavenCentral()
+
+        jcenter()
+
+        //新加
+
+        mavenLocal()
+
+        google()
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}

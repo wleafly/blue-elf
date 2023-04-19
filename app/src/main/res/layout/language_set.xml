@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:theme="@style/AppTheme.PopupOverlay"/>
+
+
+    <ScrollView
+        android:id="@+id/language_set"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#FFFEFE"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingTop="15dp"
+            android:paddingBottom="10dp"
+            android:paddingLeft="20dp"
+            android:orientation="vertical">
+
+            <!--     简体中文       -->
+            <LinearLayout
+                android:id="@+id/simple_chinese"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:text="@string/simplified_chinese">
+                </TextView>
+                <ImageView
+                    android:id="@+id/simple_chinese_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="4dp"
+                    android:background="@mipmap/ic_select">
+                </ImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="#8F8F8F">
+
+            </LinearLayout>
+
+            <!--     繁体中文       -->
+            <LinearLayout
+                android:visibility="gone"
+                android:id="@+id/complex_chinese"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:text="繁體中文">
+                </TextView>
+                <ImageView
+                    android:id="@+id/complex_chinese_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="4dp">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:visibility="gone"
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="#8F8F8F">
+
+            </LinearLayout>
+
+
+            <!--     English       -->
+            <LinearLayout
+                android:id="@+id/english"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_weight="2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:textSize="20dp"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:text="English">
+                </TextView>
+                <ImageView
+                    android:id="@+id/english_image"
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:padding="4dp">
+
+                </ImageView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="15dp"
+                android:background="#8F8F8F">
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:text="@string/save"
+                    android:background="@drawable/button_style_real_time_data">
+
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="50dp"
+                android:visibility="gone"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn1"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:text="balabala"
+                    android:background="@drawable/button_style_real_time_data">
+
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="50dp"
+                android:visibility="gone"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn2"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:text="balabala2"
+                    android:background="@drawable/button_style_real_time_data">
+
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="50dp"
+                android:visibility="gone"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/btn3"
+                    android:layout_width="200dp"
+                    android:layout_height="50dp"
+                    android:textSize="20dp"
+                    android:text="balabala3"
+                    android:background="@drawable/button_style_real_time_data">
+
+                </Button>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+
+</LinearLayout>

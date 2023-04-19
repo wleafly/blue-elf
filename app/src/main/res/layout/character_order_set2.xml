@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:theme="@style/AppTheme.PopupOverlay"/>
+
+    <ScrollView
+        android:id="@+id/order_set2_layout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_gray"
+        android:scrollbars="none"
+        android:paddingTop="20dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="@string/device_address"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/device_address"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/setting_property_edit"
+                    android:padding="2dp"
+                    android:layout_marginRight="10dp"
+                    android:digits="0123456789"
+                    android:maxLength="11"
+                    android:paddingLeft="5dp">
+
+                </EditText>
+
+                <Button
+                    android:id="@+id/get_device_address_btn"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/get_address"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/setting_button_edit">
+
+                </Button>
+
+                <Button
+                    android:id="@+id/device_address_btn"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/modify_device_address"
+                    android:textSize="18dp"
+                    android:textColor="@color/black"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/setting_button_edit">
+
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="@string/temperature_order_set"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/temp_order"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/setting_property_edit"
+                    android:padding="2dp"
+                    android:layout_marginRight="10dp"
+                    android:digits="0123456789"
+                    android:maxLength="3"
+                    android:paddingLeft="5dp">
+
+                </EditText>
+
+                <Button
+                    android:id="@+id/temp_order_btn"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/calibration"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/setting_button_edit">
+
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="@string/zero_calibration_order_set"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/zero_order"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/setting_property_edit"
+                    android:padding="2dp"
+                    android:layout_marginRight="10dp"
+                    android:digits="0123456789"
+                    android:maxLength="5"
+                    android:paddingLeft="5dp">
+
+                </EditText>
+
+                <Button
+                    android:id="@+id/zero_order_btn"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/calibration"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/setting_button_edit">
+
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/order2"
+                    android:layout_weight="3"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:gravity="center"
+                    android:text="@string/slope_calibration_order_set"
+                    android:textColor="@color/black"
+                    android:textSize="18dp">
+
+                </TextView>
+
+                <EditText
+                    android:id="@+id/slope_order"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/setting_property_edit"
+                    android:padding="2dp"
+                    android:layout_marginRight="10dp"
+                    android:digits="0123456789"
+                    android:maxLength="5"
+                    android:paddingLeft="5dp">
+
+                </EditText>
+
+                <Button
+                    android:id="@+id/slope_order_btn"
+                    android:layout_weight="4"
+                    android:layout_width="0dp"
+                    android:layout_height="40dp"
+                    android:text="@string/calibration"
+                    android:textSize="18dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:textColor="@color/black"
+                    android:background="@drawable/setting_button_edit">
+
+                </Button>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical"
+                android:visibility="gone">
+
+                <LinearLayout
+                    android:layout_width="260dp"
+                    android:layout_height="140dp"
+                    android:layout_weight="6"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_weight="4"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:text="@string/interval_time_order_set"
+                            android:textColor="@color/black"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/interval_time"
+                            android:layout_weight="2"
+                            android:layout_width="160dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/setting_property_edit"
+                            android:padding="2dp"
+                            android:digits="0123456789"
+                            android:maxLength="5">
+
+                        </EditText>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:padding="10dp"
+                        android:gravity="center_vertical">
+
+                        <TextView
+                            android:layout_weight="4"
+                            android:layout_width="100dp"
+                            android:layout_height="50dp"
+                            android:gravity="center"
+                            android:text="@string/test_time_order_set"
+                            android:textColor="@color/black"
+                            android:textSize="18dp">
+
+                        </TextView>
+
+                        <EditText
+                            android:id="@+id/test_time"
+                            android:layout_weight="2"
+                            android:layout_width="160dp"
+                            android:layout_height="40dp"
+                            android:background="@drawable/setting_property_edit"
+                            android:padding="2dp"
+                            android:digits="0123456789"
+                            android:maxLength="5"
+                            android:paddingLeft="5dp">
+
+                        </EditText>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="140dp"
+                    android:layout_weight="6"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/time_btn"
+                        android:layout_weight="6"
+                        android:layout_width="100dp"
+                        android:layout_height="110dp"
+                        android:text="@string/calibration"
+                        android:textSize="18dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginRight="15dp"
+                        android:textColor="@color/black"
+                        android:background="@drawable/setting_button_edit">
+
+                    </Button>
+
+                </LinearLayout>
+
+
+
+            </LinearLayout>
+
+
+
+        </LinearLayout>
+
+
+
+
+    </ScrollView>
+</LinearLayout>

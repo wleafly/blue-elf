@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:theme="@style/AppTheme.PopupOverlay"/>
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="3"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        android:orientation="vertical">
+        <ImageView
+            android:layout_gravity="center"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:background="@mipmap/ic_launcher">
+        </ImageView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="@string/app_name"
+            android:textSize="22dp"
+            android:gravity="center"
+            android:textColor="@color/black">
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:text="Version 2.4.12"
+            android:textColor="@color/black"
+            android:textSize="22dp"></TextView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
+        android:layout_gravity="center"
+        android:gravity="bottom"
+        android:paddingLeft="100dp"
+        android:paddingRight="100dp"
+        android:paddingBottom="20dp"
+        android:orientation="vertical">
+
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textColor="#7498F1"-->
+<!--            android:gravity="center"-->
+<!--            android:text="@string/soft_service">-->
+<!--        </TextView>-->
+<!--        <TextView-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="20dp"-->
+<!--            android:text="@string/privacy_protect"-->
+<!--            android:textSize="15dp"-->
+<!--            android:textColor="#7498F1"-->
+<!--            android:gravity="center">-->
+<!--        </TextView>-->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textSize="14dp"
+            android:textColor="#CCCCCC"
+            android:gravity="center"
+            android:text="@string/copyright">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textSize="14dp"
+            android:textColor="#CCCCCC"
+            android:gravity="center"
+            android:text="Copyright © 2021 Chemins">
+        </TextView>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:textSize="14dp"
+            android:textColor="#CCCCCC"
+            android:gravity="center"
+            android:text="All Rights Reserved">
+        </TextView>
+
+    </LinearLayout>
+</LinearLayout>
+</LinearLayout>

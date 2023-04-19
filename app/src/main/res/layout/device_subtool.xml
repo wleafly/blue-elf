@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:theme="@style/AppTheme.PopupOverlay"/>
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFEFE"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textSize="24dp"
+            android:gravity="center"
+            android:text="功能描述"
+            android:textColor="@color/black">
+
+        </TextView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="1200dp"
+            android:lineSpacingExtra="10dp"
+            android:padding="12dp"
+            android:textSize="18dp"
+            android:textColor="@color/black"
+            android:text="
+        1、指令FA：实时读取传感器数值并在连接蓝牙的手机上实时显示，第一次发送数值+时间参数，然后只发送数值。在实时读取数值时如果断开蓝牙将会在一段时间后存储一条数据并关闭传感器（默认时间为2分钟，即后面介绍的第二个时间参数），这是为了避免失误，若是不小心关闭的蓝牙，需在2分钟内重新连接，即可继续操作。
+        \n
+        2、指令FB：读取历史数据，未连接蓝牙情况下，每隔一段时间打开传感器读取数据，默认时间间隔为30分钟，即每隔30分钟记录一次数据。当蓝牙连接时，时间不计时，蓝牙断开连接后，重新计时。该指令可以将存储在FLASH芯片中的数据读出来。
+        \n
+        3、指令FC+修改的数值，共3字节：修改两个时间参数，比如默认的30分钟间隔，则第一个时间参数为30分钟（0x1E），第二个时间参数为2分钟（0x02），即每隔28分钟开启一次传感器，测试2分钟后记录最后一条数据，从而实现每30分钟记录一次数据。
+        \n
+        4、指令FD：擦除FLASH芯片内部数据，擦除所有存储的数据。（谨慎使用！！）
+        例如：整片擦除：FD。
+        \n
+        5、指令FE+校准类型+校准值，共4字节：根据校准类型进行零点校准或斜率校准，0代表零点校准，1代表斜率校准。还有根据不同传感器输入不同校准值。
+        例如：电导率零点校准：FE 00 00 00。
+        \n
+        6、指令F9：读取设备ID地址，默认地址为06，若传感器地址不为06或者未知，请在使用时先读取ID地址。
+        例如：读取地址：F9。
+        \n
+         7、重要说明：操作完成后，断开蓝牙将会自动进入实时读取指令，并在一段时间后存储一条数据，然后才会关闭传感器。同样，这段时间内连接蓝牙可继续操作。若不想进行此步骤可将蓝牙设备断电，或者卸下传感器，后者将不会存储本次数据。">
+
+        </TextView>
+
+    </LinearLayout>
+</ScrollView>
+</LinearLayout>

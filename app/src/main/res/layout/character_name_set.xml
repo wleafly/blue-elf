@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:theme="@style/AppTheme.PopupOverlay"/>
+
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    android:scrollbars="none">
+
+
+    <LinearLayout
+        android:id="@+id/name_set"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_gray"
+        android:orientation="vertical">
+
+
+<!--        <LinearLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="200dp"-->
+<!--            android:layout_margin="20dp"-->
+<!--            android:background="@drawable/layout_border_style"-->
+<!--            android:orientation="horizontal">-->
+
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="1"-->
+<!--                android:layout_margin="10dp"-->
+<!--                android:paddingTop="10dp"-->
+<!--                android:orientation="vertical">-->
+<!--                <TextView-->
+<!--                    android:id="@+id/device_name"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:text="@string/name"-->
+<!--                    android:textSize="20dp"-->
+<!--                    android:textColor="@color/black">-->
+
+<!--                </TextView>-->
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:layout_marginTop="15dp"-->
+<!--                    android:text="@string/device_name_range"-->
+<!--                    android:textSize="16dp"-->
+<!--                    android:textColor="@color/black">-->
+<!--                </TextView>-->
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:layout_marginTop="5dp"-->
+<!--                    android:text="@string/device_name_range_list"-->
+<!--                    android:textSize="18dp"-->
+<!--                    android:textColor="#2196F3">-->
+<!--                </TextView>-->
+<!--                <TextView-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:gravity="center_vertical"-->
+<!--                    android:layout_marginTop="8dp"-->
+<!--                    android:text="@string/device_name_description"-->
+<!--                    android:textSize="14dp"-->
+<!--                    android:textColor="#A3A3A3">-->
+<!--                </TextView>-->
+
+<!--            </LinearLayout>-->
+<!--            <LinearLayout-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:layout_weight="2"-->
+<!--                android:layout_margin="5dp"-->
+<!--                android:paddingTop="10dp"-->
+<!--                android:paddingBottom="10dp"-->
+<!--                android:paddingRight="5dp">-->
+<!--                <ImageView-->
+<!--                    android:id="@+id/device_image"-->
+<!--                    android:layout_width="match_parent"-->
+<!--                    android:layout_height="match_parent"-->
+<!--                    android:background="@mipmap/cgq">-->
+
+<!--                </ImageView>-->
+
+<!--            </LinearLayout>-->
+
+
+<!--        </LinearLayout>-->
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/layout_border_style_shadow"
+            android:elevation="5dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@drawable/layout_border_style"
+                android:orientation="horizontal"
+                android:paddingRight="10dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/device_new_name"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:background="@null"
+                        android:digits="abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.-_"
+                        android:gravity="center_vertical"
+                        android:hint="@string/modify_hint"
+                        android:maxLength="18"
+                        android:padding="5dp"
+                        android:textColor="@color/black"
+                        android:textSize="18dp">
+
+                    </EditText>
+
+                    <TextView
+                        android:id="@+id/number_words"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_weight="4"
+                        android:gravity="center"
+                        android:text="0/18"
+                        android:textSize="18dp">
+
+                    </TextView>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginLeft="20dp"
+                android:gravity="center_vertical"
+                android:text="@string/device_name_description_new"
+                android:textSize="14dp"></TextView>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center">
+            <Button
+                android:id="@+id/btn"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:text="@string/modify_confirm"
+                android:textSize="20dp"
+                android:background="@drawable/button_style_real_time_data">
+
+            </Button>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:background="@drawable/layout_border_style_shadow"
+            android:elevation="5dp"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:paddingRight="10dp"
+                android:background="@drawable/layout_border_style"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="20dp"
+                    android:layout_weight="1"
+                    android:orientation="horizontal">
+                    <EditText
+                        android:id="@+id/device_baochang"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:hint="输入包长"
+                        android:gravity="center_vertical"
+                        android:textSize="18dp"
+                        android:maxLength="18"
+                        android:digits="0123456789"
+                        android:textColor="@color/black"
+                        android:padding="5dp"
+                        android:layout_weight="1"
+                        android:background="@null">
+
+                    </EditText>
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:visibility="gone">
+            <Button
+                android:id="@+id/btn_baochang"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:text="包长修改"
+                android:textSize="20dp"
+                android:background="@drawable/button_style_real_time_data">
+
+            </Button>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:visibility="gone">
+            <Button
+                android:id="@+id/btn_moreng"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:text="默认内容"
+                android:textSize="20dp"
+                android:background="@drawable/button_style_real_time_data">
+
+            </Button>
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</ScrollView>
+
+</LinearLayout>

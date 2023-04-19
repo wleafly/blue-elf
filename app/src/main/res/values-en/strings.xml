@@ -1,0 +1,333 @@
+<resources>
+    <string name="app_name">Smurfs</string>
+    <string name="main_name">Smurfs</string>
+
+    <string name="notifyTitle">Prompt</string>
+    <string name="gpsNotifyMsg">Current mobile phone scanning Bluetooth needs to open the positioning function</string>
+    <string name="storage2" translatable="false">The APP needs to open the location information button.</string>
+    <string name="setting">Go to settings</string>
+    <string name="cancel">Cancel</string>
+
+    <string name="start_scan">Start scanning</string>
+    <string name="stop_scan">Stop scanning</string>
+    <string name="expand_search_settings">Expand search settings</string>
+    <string name="retrieve_search_settings">Retrieve search settings</string>
+    <string name="connect_fail">connection failed</string>
+    <string name="active_disconnected">disconnect</string>
+    <string name="disconnected">Connection disconnect</string>
+    <string name="please_open_blue">Please turn on Bluetooth first</string>
+    <string name="select_operation_type">Select operation type</string>
+    <string name="characteristic">Characteristic</string>
+    <string name="data_changed">Data changes:</string>
+    <string name="read">Read</string>
+    <string name="read_only">Read only</string>
+    <string name="write">Write</string>
+    <string name="open_notification">Open notification</string>
+    <string name="open_notification_only">Open notification only</string>
+    <string name="close_notification">Close notification</string>
+    <string name="close_notification_only">Close notification only</string>
+    <string name="service_list">Service list</string>
+    <string name="characteristic_list">Characteristic list</string>
+    <string name="console">Console</string>
+    <string name="name">Device name：</string>
+    <string name="mac">MAC:</string>
+    <string name="service">Service</string>
+    <string name="type">Service type (main service)</string>
+    <string name="scan_setting">Below, you can configure the conditions that you need to scan the device, which can be empty</string>
+    <string name="setting_name">Enter a broadcast name for Bluetooth devices, separated by English commas</string>
+    <string name="setting_mac">Enter Bluetooth device MAC</string>
+    <string name="setting_uuid">Enter Bluetooth device UUID, separated by commas in English</string>
+    <string name="input_hex">Please enter the HEX format command</string>
+    <string name="connect">Connect</string>
+    <string name="connected">Connected</string>
+    <string name="disconnect">Disconnect</string>
+    <string name="enter">Enter</string>
+    <string name="success">Success</string>
+
+    <!--  MainActivity  -->
+    <string name="permisson_not_open">Permission recognition is not on</string>
+    <string name="permisson_open">Smurfs needs to use storage and location permissions</string>
+    <string name="permisson_to_open">Go to open immediately</string>
+
+    <!--  AlarmDeviceActivity  -->
+    <string name="alarm_activity">Signal transfer output</string>
+
+    <!--  DeviceAboutActivity  -->
+    <string name="about_activity">About APP</string>
+
+    <!--  DeviceFunctionActivity  -->
+    <string name="function_activity">Function</string>
+
+    <!--  DeviceNameSetActivity  -->
+    <string name="name_set_activity">Change name</string>
+    <string name="device_name">Device name</string>
+    <string name="password_write_fail">Password write failed</string>
+    <string name="ensure">ensure</string>
+    <string name="device_name_not_empty">The new device name cannot be empty</string>
+    <string name="resume_load">reenter</string>
+    <string name="device_name_set_success">Device name reset successfully, exiting the system or reconnection takes effect</string>
+    <string name="device_name_set_success2">Device name reset successfully, restarting takes effect</string>
+    <string name="device_name_too_long">The new device name is too long. Enter it again.</string>
+    <string name="device_name_too_short">The new device name is too short. Enter it again.</string>
+    <string name="device_name_being_modify">The device name is being modified...</string>
+
+    <!--  DeviceOrderSet2Activity  -->
+    <string name="data_order2_activity">The calibration data2</string>
+    <string name="change_device_address">Address Change</string>
+    <string name="device_address_changing">Device address changing...</string>
+    <string name="write_success">Write successful!!!</string>
+    <string name="write_fail">Write failed!!!</string>
+    <string name="operation_fail">Operation failed, please try again later...</string>
+    <string name="init">Initialize</string>
+    <string name="init_device_address_type">Initialize the address and device type.</string>
+    <string name="select_write">Are you sure you want to write？</string>
+    <string name="order_error">Command error</string>
+    <string name="get_address_success">Obtaining address succeeded！！！</string>
+
+    <!--  DeviceOrderSetActivity  -->
+    <string name="data_order_activity">The calibration data</string>
+    <string name="select_correct_type">Select Calibration Type</string>
+    <string name="zero_calibration">Zero Calibration</string>
+    <string name="slope_calibration">Slope Calibration</string>
+    <string name="empty_to_resume_load">The input information cannot be empty! Please reenter</string>
+    <string name="out_to_resume_load">Data out of range! Please reenter</string>
+    <string name="order_set_success">Command modification successful!</string>
+    <string name="order_set_fail">Command modification failed!</string>
+    <string name="temp_order">Temperature Correction</string>
+    <string name="temp_order_writing">The temperature calibration instruction is written...</string>
+    <string name="get_address">Get</string>
+    <string name="get_address_writing">Get address instruction written...</string>
+    <string name="get_address_fail">Failed to get address!!!</string>
+    <string name="decimal_number_too_long">Keep one decimal place.</string>
+    <string name="decimal_number_error">Keep one decimal point.</string>
+    <string name="decimal_number_equals_zero">Keep one decimal place.</string>
+    <string name="data_format_error">The data is incorrect.</string>
+    <string name="invalid_argument">Invalid argument.</string>
+
+    <!--  DeviceTimeSetActivity  -->
+    <string name="time_set_activity">Test time setting</string>
+    <string name="time_set_resume_load">The interval time should not be less than the test time, please enter again!</string>
+
+    <!--  HistoryDataActivity  -->
+    <string name="history_data_activity">History data</string>
+    <string name="data_init">----</string>
+    <string name="device_ununited">Disconnected</string>
+    <string name="data_not_obtained">Disconnected</string>
+    <string name="data_temperature">Temperation</string>
+    <string name="data_PH">PH </string>
+    <string name="data_PH_Temp">PH Temp</string>
+    <string name="data_EC">Conductivity </string>
+    <string name="data_EC1">DDM(μS)</string>
+    <string name="data_EC1_Temp">DDM(μS) Temp</string>
+    <string name="data_EC2">DDM(mS)</string>
+    <string name="data_EC2_Temp">DDM(mS)Temp</string>
+    <string name="data_DO">RDO </string>
+    <string name="data_DO_Temp">RDO Temp</string>
+    <string name="data_NH">ION</string>
+    <string name="data_NH_Temp">ION Temp</string>
+    <string name="data_ZS">ZS</string>
+    <string name="data_ZS_Temp">ZS Temp</string>
+    <string name="ununited">Ununited</string>
+    <string name="data_ORP">ORP </string>
+    <string name="data_COD">COD </string>
+    <string name="data_COD_Temp">COD Temp</string>
+    <string name="data_salinity">DDM-S </string>
+    <string name="data_salinity_Temp">DDM-S Temp</string>
+    <string name="data_residual_chlorine">CL</string>
+    <string name="data_residual_chlorine_Temp">CL Temp</string>
+    <string name="data_Chlorophyl">CHLO</string>
+    <string name="data_Chlorophyl_Temp">CHLO Temp</string>
+    <string name="data_blue_green_algae">BGA</string>
+    <string name="data_blue_green_algae_Temp">BGA Temp</string>
+    <string name="data_Transparency">TSS</string>
+    <string name="data_Transparency_Temp">TSS Temp</string>
+    <string name="data_Suspended_Solids">TPS</string>
+    <string name="data_Suspended_Solids_Temp">TPS Temp</string>
+    <string name="data_oil_in_water">OIL</string>
+    <string name="data_oil_in_water_Temp">OIL Temp</string>
+    <string name="data_total">Total：</string>
+    <string name="data_total_effective">Valid total：</string>
+    <string name="data_number"></string>
+    <string name="no_data">No Data</string>
+    <string name="data_multiparameter">Multi Parameter </string>
+    <string name="attribute">Attribute</string>
+    <string name="data_COD_0">COD</string>
+    <string name="data_COD_ZS">ZS(COD)</string>
+    <string name="data_ORP_0">ORP</string>
+    <string name="data_EC_salinity">DDM/DDM-S</string>
+    <string name="data_NH4">ION</string>
+    <string name="data_singleparameter">Single Parameter</string>
+    <string name="parameter_values">value</string>
+    <string name="file_in">The downloaded files are in</string>
+    <string name="file_folder"> /sdcard/蓝牙 </string>
+    <string name="file_open"> folder, open file management?</string>
+
+    <!--  HistoryDataDeleteActivity  -->
+    <string name="history_data_delete_activity">History Data Delete</string>
+    <string name="history_data_delete_confirm">Are you sure to delete historical data?</string>
+    <string name="history_data_delete_success">Data deletion successful</string>
+    <string name="history_data_delete_fail">Data deletion failed</string>
+    <string name="history_data_download">DOWNLOAD</string>
+    <string name="history_data_download_confirm">Are you sure to download historical data?</string>
+    <string name="start_download">start</string>
+    <string name="downloading">downloading...</string>
+    <string name="download_success">Download successfully.</string>
+    <string name="no_valid_data">No valid data</string>
+    <string name="hour"> hour </string>
+    <string name="minute">minute </string>
+    <string name="seconds"> s </string>
+    <string name="history_data_number_about">The historical data stored is about</string>
+    <string name="estimated_read_time">, estimated read time:</string>
+    <string name="read_now">, read now?</string>
+    <string name="history_data_read">History Data Read</string>
+    <string name="start_read">starting</string>
+    <string name="reading">loading......</string>
+
+    <!--  LanguageSetActivity  -->
+    <string name="language_set_activity">Language</string>
+    <string name="language_set_success">Language selection successful</string>
+    <string name="language_effect">Effective Immediately</string>
+
+    <!--  TimeOrderSetActivity  -->
+    <string name="time_order">Time Calibration </string>
+    <string name="try_again_later">Timeout, please check whether the device is connected or try again later!</string>
+    <string name="get_cleaning_time_success">Cleaning interval is successfully obtained.</string>
+    <string name="get_cleaning_cycles_success">Cleaning turns of the device is successfully obtained.</string>
+
+    <!--  DeviceConnectFragment  -->
+    <string name="connect_success">Connection successful</string>
+    <string name="connect_continue">continue</string>
+
+    <!--  DeviceSettingFragment  -->
+    <string name="please_connect_device">Please connect the device before operating!</string>
+
+    <!--  RealDataFragment  -->
+    <string name="device_address">Address:</string>
+    <string name="device_type">Type:</string>
+    <string name="sensor"> Sensor</string>
+    <string name="init_data">Initialized data</string>
+    <string name="speed_gain_data">Accelerated data acquisition...</string>
+    <string name="interval_time">Interval time</string>
+    <string name="test_time">Test time</string>
+    <string name="real_data_gain_fail">Real-time data acquisition failed. Please try again later.</string>
+    <string name="select_skip_order_time">Are you sure you want to go to the time calibration page?</string>
+    <string name="address_gain_fail">Failed to read device address. Please try again later.</string>
+    <string name="address_gain_success">Device address retrieved successfully.</string>
+    <string name="type_gain_success">Sensor type obtained successfully.</string>
+    <string name="real_data_gain_success">Real-time data acquisition successful.</string>
+    <string name="zs_in_cod">ZS(COD)</string>
+    <string name="data_format_issues">Data format issues.</string>
+    <string name="battery_is_low">The battery is low, please charge it!</string>
+
+    <!--  MainActivity  -->
+    <string name="again_quit">Press again to exit the program</string>
+
+    <!--  alarm_device  -->
+    <string name="phone">Phone：</string>
+    <string name="upper_limit">Upper：</string>
+    <string name="lower_limit">Lower：</string>
+    <string name="redundancy_capability">Redundancy：</string>
+
+    <!--  character_history_data_delete  -->
+    <string name="delete_range">Delete range：</string>
+    <string name="sensor_all_data">Sensors store all the data</string>
+    <string name="history_data_delete_description">Warning: Once the data is deleted, it will be permanently deleted. The deleted data cannot be rolled back. Please be careful!</string>
+    <string name="delete_confirm">Confirm</string>
+
+    <!--  character_name_set  -->
+    <string name="device_name_range">Name range：</string>
+    <string name="device_name_range_list">digital and alphabet</string>
+    <string name="device_name_description">Description: The device name consists of a number and a letter, and the device name must begin with a letter. The device name must be at least three characters and at most 10 characters!</string>
+    <string name="modify_confirm">confirm</string>
+    <string name="modify_hint">Enter a new name</string>
+    <string name="device_name_description_new">The new name contains 3-18 digits or letters.</string>
+
+    <!--  character_order_set  -->
+    <string name="order_set_range">Calibration range</string>
+    <string name="order_set_type">Type：Zero/Slope</string>
+    <string name="order_set_range_data">Range：1-65535</string>
+    <string name="order_set_description">Description: Record the last piece of data in the test time within the interval time range</string>
+    <string name="order_confirm">confirm</string>
+
+    <!--  character_order_set2  -->
+    <string name="modify_device_address">Change</string>
+    <string name="temperature_order_set">Temperature:</string>
+    <string name="zero_calibration_order_set">Zero:</string>
+    <string name="slope_calibration_order_set">Slope:</string>
+    <string name="interval_time_order_set">Interval time:</string>
+    <string name="test_time_order_set">Test time:</string>
+    <string name="calibration">Confirm</string>
+    <string name="device_address_0">Address</string>
+    <string name="temperature_order_set_0">Temp</string>
+    <string name="modify">Change</string>
+    <string name="write_in">Write</string>
+    <string name="zero_calibration_order_set_0">Zero</string>
+    <string name="slope_calibration_order_set_0">Slope</string>
+    <string name="modify_address_new">New device address</string>
+    <string name="modify_temp_new">New temperature</string>
+    <string name="modify_zero_new">New value</string>
+    <string name="modify_slope_new">New value</string>
+    <string name="order_select">Selection</string>
+
+    <!--  character_time_set  -->
+    <string name="time_set_range">Time range</string>
+    <string name="time_set_interval">Interval time：1-255</string>
+    <string name="time_set_test">Test time：1-255</string>
+    <string name="time_set_description">Description: Record the last piece of data in the test time within the interval time range</string>
+    <string name="quick_time_set">Quick time calibration</string>
+    <string name="custom_time_set">Custom time calibration</string>
+    <string name="record_per_five_minute">Every five minutes</string>
+    <string name="record_per_ten_minute">Every ten minutes</string>
+    <string name="record_half_hour">Every half an hour</string>
+    <string name="record_per_hour">Every hour</string>
+    <string name="record_per_two_hour">Every two hours</string>
+    <string name="record_per_four_hour">Every four hours</string>
+    <string name="interval_time_hint">Enter the interval time here (in minutes)</string>
+    <string name="test_time_hint">Enter the test time here (in minutes)</string>
+    <string name="cleaning_time">Cleaning-time</string>
+    <string name="cleaning_cycles">Cleaning-cycles</string>
+    <string name="reset_cleaning_brush">Reset Brush</string>
+
+    <!--  device_about  -->
+    <string name="version">Version 2.2.3</string>
+    <string name="soft_service">Chemins Software Licensing Service</string>
+    <string name="privacy_protect">《Privacy Protection》</string>
+    <string name="copyright">chemins copyright</string>
+
+    <!--  TroubleShooting  -->
+    <string name="shooting_1">Try to establish a connection with the device</string>
+    <string name="shooting_2">The connection was successful</string>
+    <string name="shooting_3">The command was issued successfully</string>
+    <string name="shooting_4">Data analysis</string>
+
+    <!--  fragment_notifications  -->
+    <string name="time_calibration">Time calibration</string>
+    <string name="about_wisdom_sturgeon">About APP</string>
+    <string name="calibration_function">Calibration</string>
+    <string name="trouble_shooting">Troubleshoot</string>
+    <string name="language_select">Language</string>
+    <string name="system_set">Setting</string>
+
+    <!--  language_set  -->
+    <string name="simplified_chinese">Simplified Chinese</string>
+    <string name="save">save</string>
+
+    <!--  real_time_data  -->
+    <string name="refresh">Refresh</string>
+    <string name="longitude">Lng</string>
+    <string name="latitude">Lat</string>
+    <string name="gps_info_error">weak GPS signal.</string>
+
+    <!--  first_menu  -->
+    <string name="real_data">Real-time</string>
+    <string name="connect_manage">connect</string>
+    <string name="function_setting">setting</string>
+
+    <!--  device_connect_list2  -->
+    <string name="available_equipment">Available equipment</string>
+    <string name="connected_devices">Connected devices</string>
+
+    <!--  SystemSetting    -->
+    <string name="real_data_download_name">Real-time data download</string>
+
+</resources>

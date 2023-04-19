@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background_gray"
+    android:orientation="vertical">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        app:titleTextColor="@android:color/white"
+        app:theme="@style/AppTheme.PopupOverlay"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:orientation="vertical">
+
+        <!--    实时数据下载控制按钮    -->
+        <LinearLayout
+            android:id="@+id/real_data_download"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/layout_border_style"
+            android:orientation="horizontal"
+            android:paddingRight="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:layout_weight="1"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/download_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical"
+                    android:maxLength="18"
+                    android:padding="5dp"
+                    android:textColor="@color/gray1"
+                    android:textStyle="bold"
+                    android:textSize="18dp"
+                    android:text="@string/real_data_download_name">
+
+                </TextView>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="6"
+                    android:orientation="horizontal">
+
+                    <android.support.v7.widget.AppCompatCheckBox
+                        android:id="@+id/download_switch"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+                        android:theme="@style/MyCheckBox">
+
+                    </android.support.v7.widget.AppCompatCheckBox>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+        <!--    多参数配置功能    -->
+        <LinearLayout
+            android:id="@+id/mutil_configuration"
+            android:layout_width="match_parent"
+            android:layout_height="340dp"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/layout_border_style"
+            android:padding="20dp"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:layout_marginBottom="5dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textSize="18dp"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:text="多参数配置">
+
+                </TextView>
+
+            </LinearLayout>
+
+            <!--    第一个    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:text="参数一配置(默认)">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/parameter_1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:entries="@array/mutil_sensor_select_0"
+                    android:spinnerMode="dialog"
+                    android:padding="0dp">
+
+                </Spinner>
+
+            </LinearLayout>
+
+            <!--    第二个    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:gravity="center_vertical"
+                    android:text="参数二配置"
+                    android:textColor="@color/black">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/parameter_2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:padding="0dp"
+                    android:entries="@array/mutil_sensor_select"
+                    android:spinnerMode="dialog">
+
+                </Spinner>
+
+            </LinearLayout>
+
+            <!--    第三个    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:text="参数三配置">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/parameter_3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:padding="0dp"
+                    android:entries="@array/mutil_sensor_select"
+                    android:spinnerMode="dialog">
+
+                </Spinner>
+
+            </LinearLayout>
+
+            <!--    第四个    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:text="参数四配置">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/parameter_4"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:padding="0dp"
+                    android:entries="@array/mutil_sensor_select"
+                    android:spinnerMode="dialog">
+
+                </Spinner>
+
+            </LinearLayout>
+
+            <!--    第一个    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:text="参数五配置">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/parameter_5"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:padding="0dp"
+                    android:entries="@array/mutil_sensor_select"
+                    android:spinnerMode="dialog">
+
+                </Spinner>
+
+            </LinearLayout>
+
+            <!--    第一个    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:text="参数六配置">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/parameter_6"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:padding="0dp"
+                    android:entries="@array/mutil_sensor_select"
+                    android:spinnerMode="dialog">
+
+                </Spinner>
+
+            </LinearLayout>
+
+            <!--    第一个    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/black"
+                    android:layout_weight="1"
+                    android:textSize="16dp"
+                    android:text="参数七配置">
+
+                </TextView>
+
+                <Spinner
+                    android:id="@+id/parameter_7"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:padding="0dp"
+                    android:entries="@array/mutil_sensor_select"
+                    android:spinnerMode="dialog">
+
+                </Spinner>
+
+            </LinearLayout>
+
+            <!--    保存    -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_marginTop="10dp"
+                android:gravity="right"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/mutil_set_save"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="16dp"
+                    android:textColor="@color/black"
+                    android:text="保存">
+
+                </Button>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

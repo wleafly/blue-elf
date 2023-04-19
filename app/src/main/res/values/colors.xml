@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<!--    <color name="colorPrimary">#2DA4FF</color>-->
+    <color name="colorPrimary">#84B7F4</color>
+    <color name="colorPrimaryDark">#84B7F4</color>
+    <color name="colorAccent">#FF5722</color>
+    <color name="colorText">#000000</color>
+    <color name="background_gray">#EFEFEF</color>
+    <color name="background_gray2">#EDE8EFF4</color>
+    <color name="black">#000000</color>
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF36a7fe</color>
+    <color name="purple_700">#FF36a7fe</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_cyan">#95BDF0</color>
+    <color name="background_cyan2">#ABCDF2</color>
+    <color name="background_cyan3">#B0CFEC</color>
+    <color name="background_cyan4">#B8D8EC</color>
+    <color name="background_cyan5">#C8DEEB</color>
+    <color name="background_cyan6">#DAE4ED</color>
+    <color name="gray1">#E3E3E3</color>
+    <color name="gray2">#f5f5f5</color>
+    <color name="textview_click">#FF9800</color>
+    <color name="textview_common">#514F4F</color>
+</resources>

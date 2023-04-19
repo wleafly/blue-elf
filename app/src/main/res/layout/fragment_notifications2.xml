@@ -1,0 +1,649 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#EFEFEF"
+    android:scrollbars="none">
+<LinearLayout
+    android:id="@+id/setting"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#EFEFEF"
+    android:scrollbars="none"
+    android:paddingLeft="30dp"
+    android:paddingRight="30dp"
+    >
+
+
+    <LinearLayout
+        android:id="@+id/device_name"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="12dp"
+        android:background="#ffffff">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="12dp"
+                android:layout_gravity="center"
+                android:background="@mipmap/ic_device_name">
+            </ImageView>
+        </LinearLayout>
+
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/device_name"
+                android:textColor="@color/black"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@mipmap/ic_enter2">
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/device_history_data"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="12dp"
+        android:background="#ffffff"
+        android:showDividers="middle|beginning|end"
+        android:divider="@drawable/divider_shape_style"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="12dp"
+                android:background="@mipmap/ic_history_data"
+                android:layout_gravity="center">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/history_data_activity"
+                android:textColor="@color/black"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@mipmap/ic_enter2">
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_weight="20"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#777777"
+            android:layout_weight="2"></LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/device_history_data_delete"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="12dp"
+        android:background="#ffffff"
+        android:showDividers="middle|beginning|end"
+        android:divider="@drawable/divider_shape_style"
+        android:visibility="gone"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="22dp"
+                android:layout_marginRight="12dp"
+                android:background="@mipmap/ic_data_delete"
+                android:layout_gravity="center">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/history_data_delete_activity"
+                android:textColor="@color/black"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@mipmap/ic_enter2">
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp">
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/device_time_set"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="12dp"
+        android:background="#ffffff"
+        android:showDividers="middle|beginning|end"
+        android:divider="@drawable/divider_shape_style"
+        android:visibility="gone"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="12dp"
+                android:background="@mipmap/ic_time"
+                android:layout_gravity="center">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/time_calibration"
+                android:textColor="@color/black"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@mipmap/ic_enter2">
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_weight="20"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#777777"
+            android:layout_weight="2"></LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/device_order_set"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="12dp"
+        android:background="#ffffff"
+        android:showDividers="middle|beginning|end"
+        android:divider="@drawable/divider_shape_style"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="27dp"
+                android:layout_height="27dp"
+                android:layout_marginRight="12dp"
+                android:background="@mipmap/ic_corrent_device"
+                android:layout_gravity="center">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/data_order_activity"
+                android:textColor="@color/black"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@mipmap/ic_enter2">
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_weight="20"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#777777"
+            android:layout_weight="2"></LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+
+        android:id="@+id/alarm_device"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="12dp"
+        android:background="#ffffff"
+        android:showDividers="middle|beginning|end"
+        android:divider="@drawable/divider_shape_style"
+        >
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="12dp"
+                android:background="@mipmap/ic_alarmdevice">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/alarm_activity"
+                android:textColor="@color/black"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@mipmap/ic_enter2">
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/about_function"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="12dp"
+        android:background="#ffffff"
+        android:visibility="gone">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:layout_marginRight="12dp"
+                android:background="@mipmap/ic_function"
+                android:layout_gravity="center"
+                android:padding="5dp">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/function_activity"
+                android:textColor="@color/black"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@mipmap/ic_enter2">
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:orientation="horizontal"
+        android:visibility="gone">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#ffffff"
+            android:layout_weight="20"></LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#777777"
+            android:layout_weight="2"></LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/about_app"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="12dp"
+        android:background="#ffffff">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="12dp"
+                android:background="@mipmap/ic_about"
+                android:layout_gravity="center"
+                android:padding="5dp">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/about_wisdom_sturgeon"
+                android:textColor="@color/black"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@mipmap/ic_enter2">
+        </ImageView>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/device_order_set2"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="12dp"
+        android:background="#ffffff">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="12dp"
+                android:background="@mipmap/ic_about"
+                android:layout_gravity="center"
+                android:padding="5dp">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/calibration_function"
+                android:textColor="@color/black"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@mipmap/ic_enter2">
+        </ImageView>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="10dp">
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/language_set"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:orientation="horizontal"
+        android:paddingRight="10dp"
+        android:paddingLeft="12dp"
+        android:background="#ffffff">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="22dp"
+                android:layout_height="20dp"
+                android:layout_marginRight="12dp"
+                android:background="@mipmap/ic_about"
+                android:layout_gravity="center"
+                android:padding="5dp">
+            </ImageView>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="2">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="16dp"
+                android:gravity="center_vertical"
+                android:text="@string/language_select"
+                android:textColor="@color/black"
+                >
+            </TextView>
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_gravity="center"
+            android:layout_weight="10"
+            android:src="@mipmap/ic_enter2">
+        </ImageView>
+
+    </LinearLayout>
+
+
+
+</LinearLayout>
+    </ScrollView>
