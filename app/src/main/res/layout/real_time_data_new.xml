@@ -184,113 +184,130 @@
 
 
 <!--    常规数据框    -->
-
     <LinearLayout
-        android:id="@+id/whole_data_linear"
+        android:id="@+id/basic_data1"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="80dp"
         android:background="@drawable/layout_border_style_shadow"
+        android:elevation="5dp"
         android:paddingLeft="10dp"
-        android:paddingRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical">
+        android:paddingBottom="2dp"
+        android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingRight="10dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:background="@drawable/layout_bottom_border">
 
             <TextView
-                android:id="@+id/main_param"
-                android:text="ORP"
-                android:layout_width="80dp"
-                android:layout_height="80dp"
-                android:gravity="center"
-                android:textColor="@color/black" />
-            <View
-                android:layout_width="0dp"
+                android:id="@+id/interval_time"
+                android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_weight="1" />
-            <TextView
-                android:id="@+id/value"
-                android:text="10.2mv"
-                android:layout_width="wrap_content"
-                android:layout_height="80dp"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:textColor="@color/black" />
+                android:text="@string/interval_time"
+                android:textColor="@color/black">
+            </TextView>
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="#838383">
+            </LinearLayout>
 
-            <CheckBox
-                android:id="@+id/chat_show_or_fold"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
-                android:layout_marginLeft="30dp"
-                android:button="@null"
-                android:background="@drawable/chat_fold" />
         </LinearLayout>
 
         <LinearLayout
-            android:id="@+id/hide_content"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:visibility="gone">
-            <LinearLayout
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bottom_border"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingRight="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/text2"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:paddingHorizontal="20dp">
-                <TextView
-                    android:id="@+id/temperature"
-                    android:text="温度：26℃"
-                    android:textColor="@color/black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
-
-                <View
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1" />
-
-                <TextView
-                    android:id="@+id/address"
-                    android:text="地址：6"
-                    android:textColor="@color/black"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content" />
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="3min"
+                android:textColor="@color/black">
+            </TextView>
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="#838383">
 
             </LinearLayout>
-            <!--     折线图框      -->
-            <!--            <LinearLayout-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="wrap_content"-->
-            <!--                android:orientation="vertical"-->
-            <!--                android:layout_margin="10dp"-->
-            <!--                android:background="@drawable/layout_border_style_shadow"-->
-            <!--                android:elevation="5dp">-->
-
-            <!--                <TextView-->
-            <!--                    android:id="@+id/linechart_name"-->
-            <!--                    android:layout_width="match_parent"-->
-            <!--                    android:layout_height="match_parent"-->
-            <!--                    android:text="@string/real_data"-->
-            <!--                    android:layout_margin="10dp"-->
-            <!--                    android:textColor="@color/black"-->
-            <!--                    android:textSize="16dp">-->
-            <!--                </TextView>-->
-
-            <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/dy_line_chart"
-                android:layout_width="match_parent"
-                android:layout_height="400dp"
-                android:layout_marginBottom="20dp"
-                android:layout_weight="1"/>
-
-            <!--            </LinearLayout>-->
         </LinearLayout>
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/layout_bottom_border"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingRight="10dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginBottom="4dp"
+            android:layout_gravity="center">
 
+            <TextView
+                android:id="@+id/text3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/test_time"
+                android:textColor="@color/black">
+            </TextView>
+            <LinearLayout
+                android:layout_width="1dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="#838383">
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="4dp"
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:paddingRight="10dp"
+            android:layout_gravity="center"
+            android:background="@drawable/layout_bottom_border">
+
+            <TextView
+                android:id="@+id/text4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="2min"
+                android:textColor="@color/black"
+                android:background="@drawable/layout_bottom_border">
+            </TextView>
+        </LinearLayout>
 
     </LinearLayout>
+
+
 
     <!--    ORP数据框  -->
     <LinearLayout
@@ -594,12 +611,12 @@
 
 <!--    多参数的温度和时间数据框    -->
     <LinearLayout
-        android:id="@+id/basic_data2"
+        android:id="@+id/whole_data_linear"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:background="@drawable/layout_border_style_shadow"
-        android:elevation="5dp"
         android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
@@ -607,88 +624,73 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
+            <TextView
+                android:id="@+id/main_param"
+                android:text="ORP"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:textColor="@color/black" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/value"
+                android:text="10.2mv"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/chat_show_or_fold"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="30dp"
+                android:button="@null"
+                android:background="@drawable/chat_fold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hide_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/layout_bottom_border"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:paddingRight="10dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_gravity="center">
-
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp">
                 <TextView
-                    android:id="@+id/pro1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/data_ORP_0"
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="#838383">
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/layout_bottom_border"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:paddingRight="10dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_gravity="center">
-
-                <TextView
-                    android:id="@+id/pro10"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/interval_time"
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="#838383">
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:paddingRight="10dp"
-                android:layout_gravity="center"
-                android:background="@drawable/layout_bottom_border">
-
-                <TextView
-                    android:id="@+id/pro11"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/test_time"
+                    android:id="@+id/temperature"
+                    android:text="温度：26℃"
                     android:textColor="@color/black"
-                    android:background="@drawable/layout_bottom_border">
-                </TextView>
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/address"
+                    android:text="地址：6"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
             </LinearLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/dy_line_chart"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"/>
 
         </LinearLayout>
 
@@ -941,7 +943,40 @@
 
     </LinearLayout>
 
+<!--     折线图框      -->
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="match_parent"-->
+<!--        android:orientation="vertical"-->
+<!--        android:layout_marginTop="20dp"-->
+<!--        android:layout_marginLeft="10dp"-->
+<!--        android:layout_marginRight="10dp"-->
+<!--        android:layout_marginBottom="10dp"-->
+<!--        android:background="@drawable/layout_border_style_shadow"-->
+<!--        android:elevation="5dp">-->
 
+<!--        <TextView-->
+<!--            android:id="@+id/linechart_name"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent"-->
+<!--            android:text="@string/real_data"-->
+<!--            android:layout_marginLeft="10dp"-->
+<!--            android:layout_marginTop="10dp"-->
+<!--            android:layout_marginBottom="10dp"-->
+<!--            android:textColor="@color/black"-->
+<!--            android:textSize="16dp">-->
+<!--        </TextView>-->
+
+<!--        <com.github.mikephil.charting.charts.LineChart-->
+<!--            android:id="@+id/dy_line_chart_demo"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="400dp"-->
+<!--            android:layout_marginBottom="20dp"-->
+<!--            android:layout_weight="1"/>-->
+
+
+
+<!--    </LinearLayout>-->
 
 
 </LinearLayout>
