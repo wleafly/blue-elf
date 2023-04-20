@@ -137,7 +137,7 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
     private Boolean isF5Success = false;
 
     private Button test_btn;
-    public static int state = 0;
+    public static int state;
 
 
     @Nullable
@@ -390,7 +390,7 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
             public void onScanFinished(List<BleDevice> scanResultList) {
                 img_loading.clearAnimation();
                 img_loading.setVisibility(View.INVISIBLE);
-                btn_scan.setText(getString(R.string.start_scan));
+//                btn_scan.setText(getString(R.string.start_scan));
                 mWaveSwipeRefreshLayout.setRefreshing(false);
             }
         });
