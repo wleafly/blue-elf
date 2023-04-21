@@ -222,9 +222,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
          * 下方的导航栏
          */
         mBv = (BottomNavigationView) findViewById(R.id.bv);
-        mVp = (ViewPager) findViewById(R.id.vp);
+//        mVp = (ViewPager) findViewById(R.id.vp);
 //        BottomNavigationViewHelper.disableShiftMode(mBv);
-        mVp.setOffscreenPageLimit(2);
+//        mVp.setOffscreenPageLimit(2);
 
         //这里可true是一个消费过程，同样可以使用break，外部返回true也可以
         mBv.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -263,7 +263,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                         System.out.println("你点击可realdata");
 
-                        mVp.setCurrentItem(0);
+//                        mVp.setCurrentItem(0);
                         break;
 
                     case R.id.item_device_connect:
@@ -284,7 +284,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                         }
                         selectedFragment = new DeviceConnectFragment();
-                        mVp.setCurrentItem(1);
+//                        mVp.setCurrentItem(1);
                         break;
 
                     case R.id.item_device_setting:
@@ -313,7 +313,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                             }
                         }
                         selectedFragment = new DeviceSettingFragment();
-                        mVp.setCurrentItem(2);
+//                        mVp.setCurrentItem(2);
                         break;
                 }
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
@@ -323,42 +323,42 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
 
         // 数据填充，静态设置所有的Fragment
-        setupViewPager(mVp);
-        mVp.setCurrentItem(0);
+//        setupViewPager(mVp);
+//        mVp.setCurrentItem(0);
         //ViewPager监听
-        mVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            @Override
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
-
-            }
-
-            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
-            @Override
-            public void onPageSelected(int position) {
-                System.out.println("这里是滑动页面" + position);
-                switch (position) {
-                    case 0:
-                        if (state == 0) {
-//                            realDataFragment.onResume();
-                        } else if (state == 1) {
-//                            realDataFragmentNew.onResume();
-                        }
-                        break;
-                    case 1:
-                        break;
-                    case 2:
-                        deviceSettingFragment.onResume();
-                        break;
-
-                }
-                mBv.getMenu().getItem(position).setChecked(true);
-            }
-
-            @Override
-            public void onPageScrollStateChanged(int state) {
-
-            }
-        });
+//        mVp.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+//            @Override
+//            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+//
+//            }
+//
+//            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
+//            @Override
+//            public void onPageSelected(int position) {
+//                System.out.println("这里是滑动页面" + position);
+//                switch (position) {
+//                    case 0:
+//                        if (state == 0) {
+////                            realDataFragment.onResume();
+//                        } else if (state == 1) {
+////                            realDataFragmentNew.onResume();
+//                        }
+//                        break;
+//                    case 1:
+//                        break;
+//                    case 2:
+//                        deviceSettingFragment.onResume();
+//                        break;
+//
+//                }
+//                mBv.getMenu().getItem(position).setChecked(true);
+//            }
+//
+//            @Override
+//            public void onPageScrollStateChanged(int state) {
+//
+//            }
+//        });
 
     }
 

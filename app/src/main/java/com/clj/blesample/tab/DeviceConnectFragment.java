@@ -137,7 +137,7 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
     private Boolean isF5Success = false;
 
     private Button test_btn;
-    public static int state = 0;
+    public static int state;
 
 
     @Nullable
