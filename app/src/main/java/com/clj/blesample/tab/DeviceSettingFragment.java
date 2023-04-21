@@ -53,6 +53,7 @@ import com.clj.blesample.application.MyApplication;
 
     private Boolean isVisible = false;
 
+
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {

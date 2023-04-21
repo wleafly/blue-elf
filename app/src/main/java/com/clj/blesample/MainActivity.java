@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FragmentTransaction fragmentTransaction;
     private Fragment selectedFragment = null;
 
-    private int state = 1;
+    private int state = 0;
 
     // 蓝牙FastBle的初始化
     @Override

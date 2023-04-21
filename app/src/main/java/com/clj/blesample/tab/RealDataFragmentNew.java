@@ -3,7 +3,6 @@ package com.clj.blesample.tab;
 import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattService;
-import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -11,17 +10,18 @@ import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.CheckBox;
-import android.widget.CompoundButton;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.clj.blesample.R;
+import com.clj.blesample.adapter.ChartAdapter;
 import com.clj.blesample.application.MyApplication;
+import com.clj.blesample.entity.Chart;
 import com.clj.blesample.utils.DyLineChartUtils;
 import com.clj.fastble.BleManager;
 import com.clj.fastble.callback.BleNotifyCallback;
@@ -35,8 +35,7 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.List;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -45,16 +44,20 @@ public class RealDataFragmentNew extends Fragment {
     private DyLineChartUtils dyDemo; // 样例
     private BleDevice bleDevice;
     private String incompleteData = ""; // 不完全的实时数据
-    private Boolean isRealData = false; // 是都是实时数据
-    private Map<String,String> addressToParamIdMap = new HashMap<>();
-    private String[] paramArr = new String[]{"DDM_μ","DDM_m","PHG","ORP","RDO","ION","ZS","DDM_S","COD","CL","CHLO","BGA","TPS","TSS","OIL","BOD"};
-    private String[] paramArrChinese = new String[]{"电导率","电导率","PH值","ORP","溶解氧","铵氮/离子类","浊度","盐度","COD","余率","叶绿素","蓝绿藻","透明度","悬浮物","水中油","BOD"};
-    private String[] unitArr = new String[]{"μS/cm","mS/cm","","mV","mg/L","mg/L","mg/L","NTV","PSU","mg/L","mg/L","μg/L","Kcells/mL","mm","mg/L","mg/L",""};
+    private Boolean isRealData = false; // 是实时数据
+    private List paramIdList = new ArrayList<String>();
+    private String[] paramArr = new String[]{"","DDM_μ","DDM_m","PHG","ORP","RDO","ION","ZS","DDM_S","COD","CL","CHLO","BGA","TPS","TSS","OIL","BOD"};
+    private String[] paramArrChinese = new String[]{"","电导率","电导率","PH","ORP","溶解氧","铵氮/离子类","浊度","盐度","COD","余氯","叶绿素","蓝绿藻","透明度","悬浮物","水中油","BOD"};
+    private String[] unitArr = new String[]{"","μS/cm","mS/cm","","mV","mg/L","mg/L","NTV","PSU","mg/L","mg/L","μg/L","Kcells/mL","mm","mg/L","mg/L",""};
+    // 单参数数据上下限：占位符，电导率1，电导率2，PH，ORP，溶解氧，氨氮，浊度，盐度，化学需氧量COD,余氯，，叶绿素，蓝绿藻，透明度，悬浮物，水中油,BOD
+    private int[] chartMaxArr = {0,100, 100, 14,  100, 20,  100,  100,  70, 100,10,  400,  300,  100,  100, 40, 500};
     private boolean isFirstData = true;
-    private int sequence = 0;
+    private int sq = 0;
     private int dataIndex = 0;
     private TextView time1;
     private TextView time2;
+    private List<Chart> chartList=new ArrayList<>();
+    private ChartAdapter adapter;
 
     @Nullable
     @Override
@@ -71,114 +74,56 @@ public class RealDataFragmentNew extends Fragment {
         time1=view.findViewById(R.id.time1);
         time2=view.findViewById(R.id.time2);
 
-        init(view);
+//        chartList.add(new Chart("COD","30"));
+//        chartList.add(new Chart("COD2","330"));
+        RecyclerView chart_recyclerView = view.findViewById(R.id.chart_recyclerView);
+        chart_recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        adapter = new ChartAdapter(chartList,getActivity());
+        chart_recyclerView.setAdapter(adapter);
+
 
         sensor_type.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                ArrayList data = new ArrayList<String []>();
-                data.add(new String[]{"3","0","9"});
-                data.add(new String[]{"6","0","6"});
-                data.add(new String[]{"16","0","4"});
-                data.add(new String[]{"3","0.0","0","0.0","0","3.764","3","2"});//带时间
-                data.add(new String[]{"6", "0.09", "0", "3.764"});
-                data.add(new String[]{"16", "155", "3.764"});
-                data.add(new String[]{"3","0.0","0","0.0","0","3.764"});//带时间
-
-                Timer timer = new Timer();
-                timer.schedule(new TimerTask() {
+                String[][] fakeData = new String[][]{new String[]{"3","0","9"},new String[]{"6","0","6"},new String[]{"16","0","4"},
+                        new String[]{"3","0.0","0","0.0","0","3.764","3","2"},
+                        new String[]{"6", "0.09", "0", "3.764"},new String[]{"16", "155", "3.764"},new String[]{"3","0.0","0","0.0","0","3.764"}
+                };
+                sq = 0;
+                new Timer().schedule(new TimerTask() {
                     @Override
                     public void run() {
-                        updateDate((String[])data.get(sequence));
-                        if (sequence==6){
-                            sequence = 3;
-                        }
-                        sequence++;
+                        runOnUiThread(new Runnable() {
+                            @Override
+                            public void run() {
+                                if (sq<3){
+                                    updateData(fakeData[sq],true);
+                                }else {
+                                    updateData(fakeData[sq],false);
+                                }
+                                sq++;
+                                if (sq==7){
+                                    sq=4;
+                                }
+                            }
+                        });
+
+
+
                     }
                 },0,1500);
             }
         });
-
-
-
-//        getDeviceInfo();
+        getDeviceInfo();
 
     }
 
-    private void init(View view) {
-        LinearLayout linear = view.findViewById(R.id.linear);
-        LinearLayout linear2 = view.findViewById(R.id.linear2);
-        LinearLayout linear3 = view.findViewById(R.id.linear3);
-        LinearLayout linear_special = view.findViewById(R.id.linear_special);
-        TextView main_param = view.findViewById(R.id.main_param);
-        TextView main_param2 = view.findViewById(R.id.main_param2);
-        TextView main_param3 = view.findViewById(R.id.main_param3);
-        TextView main_param_special = view.findViewById(R.id.main_param_special);
-        TextView value = view.findViewById(R.id.value);
-        TextView value2 = view.findViewById(R.id.value2);
-        TextView value3 = view.findViewById(R.id.value3);
-        TextView value_special = view.findViewById(R.id.value_special);
-        LinearLayout hide_content = view.findViewById(R.id.hide_content);
-        LinearLayout hide_content2 = view.findViewById(R.id.hide_content2);
-        LinearLayout hide_content3 = view.findViewById(R.id.hide_content3);
-        LinearLayout hide_content_special = view.findViewById(R.id.hide_content_special);
-        CheckBox chat_show_or_fold = view.findViewById(R.id.chat_show_or_fold);
-        CheckBox chat_show_or_fold2 = view.findViewById(R.id.chat_show_or_fold2);
-        CheckBox chat_show_or_fold3 = view.findViewById(R.id.chat_show_or_fold3);
-        CheckBox chat_show_or_fold_special = view.findViewById(R.id.chat_show_or_fold_special);
-        TextView bod_special = view.findViewById(R.id.bod_special);
-        TextView electric_special = view.findViewById(R.id.electric_special);
 
-        chart = view.findViewById(R.id.chart);
-
-        dyDemo = new DyLineChartUtils(chart, "", Color.BLUE, getContext());
-        dyDemo.setYAxis(100, 0, 8);
-        chat_show_or_fold.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    hide_content.setVisibility(View.VISIBLE);
-                } else {
-                    hide_content.setVisibility(View.GONE);
-                }
-            }
-        });
-        chat_show_or_fold2.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    hide_content2.setVisibility(View.VISIBLE);
-                } else {
-                    hide_content2.setVisibility(View.GONE);
-                }
-            }
-        });
-        chat_show_or_fold3.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    hide_content3.setVisibility(View.VISIBLE);
-                } else {
-                    hide_content3.setVisibility(View.GONE);
-                }
-            }
-        });
-        chat_show_or_fold_special.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                if (b) {
-                    hide_content_special.setVisibility(View.VISIBLE);
-                } else {
-                    hide_content_special.setVisibility(View.GONE);
-                }
-            }
-        });
-
-    }
 
     // 初始化折线图demo数据
     public void initLineChartDemo() {
-//        double[] demo = {48.3, 56.8, 42.5, 70.6, 14.5, 52.2, 43.9, 48.8};
+//        dyDemo = new DyLineChartUtils(lineChartDemo, "", Color.BLUE, getContext());
+        dyDemo.setYAxis(100, 0, 8);
         for (int i = 0; i < 8; i++) {
             new Handler().postDelayed(new Runnable() {
                 @Override
@@ -190,33 +135,31 @@ public class RealDataFragmentNew extends Fragment {
 
     }
 
-    private void updateDate(String[] numArr) {
+    private void updateData(String[] numArr, Boolean isHead) {
         System.out.println(Arrays.toString(numArr));
-
-        if (numArr.length==3&&numArr[1].equals("0")){ //头数据,表示传感器类型
-            String address = numArr[0];
-            String paramType = numArr[2];
-            addressToParamIdMap.put(address,paramType);
+        if (isHead){ //头数据,表示传感器类型,例如[6,0,9],第1个值表示地址，第3个表示参数类型id
+            paramIdList.add(numArr[0]);
+            chartList.add(new Chart(paramArr[Integer.parseInt(numArr[2])],"",unitArr[Integer.parseInt(numArr[2])],chartMaxArr[Integer.parseInt(numArr[2])],numArr[0]));
+            System.out.println(paramArr[Integer.parseInt(numArr[2])]);
+            adapter.notifyDataSetChanged();
         }else {
-            if (isFirstData){ //第一条长度不为3的数据，后两个代表时间
+            if (isFirstData){ //第一条带花括号的数据，后两个代表时间
                 time1.setText(numArr[numArr.length-2]+"min");
                 time2.setText(numArr[numArr.length-1]+"min");
                 isFirstData = false;
+                adapter.setNeedCreateChat(false);
+            }else {
+                if (numArr.length==6){//3ORP,4普遍,6COD
+                    adapter.updateCodChart(paramIdList.indexOf(numArr[0]),Double.parseDouble(numArr[1]),numArr[2],numArr[3],numArr[4]); //更新表格数据
+                }else {
+                    adapter.updateChart(paramIdList.indexOf(numArr[0]),Double.parseDouble(numArr[1]),numArr[2]); //更新表格数据
+                }
+
 
             }
-            switch (numArr.length){
-                case 3:
-                    System.out.println("ORP");
-                    break;
-                case 4:
-                    System.out.println("一般情况");
-                    break;
-                case 6:
-                    System.out.println("COD");
-            }
         }
-        dataIndex++;
     }
+
 
     private void runOnUiThread(Runnable runnable) {
         if (isAdded() && getActivity() != null)
@@ -227,13 +170,8 @@ public class RealDataFragmentNew extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
     public void getDeviceInfo() {
         // 如果此时存储的设备地址是0，表示没有设备地址的存入
-//        if(globalDeviceAddress == 0 || globalIntervalTime == -1) {
-//        Date date = new Date();
-//        SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss SSS");
-//        String dateString = formatter.format(date);
         String hex = "f900";
         System.out.println("现在发送的指令是" + hex);
-        Boolean isGetData = false;
         bleDevice = ((MyApplication) getActivity().getApplication()).getBasicBleDevice();
 
         //获取BluetoothGattCharacteristic
@@ -322,7 +260,7 @@ public class RealDataFragmentNew extends Fragment {
                                                                                     System.out.println("接收：" + s2);
                                                                                     //判断是否为头数据
                                                                                     if (s1.charAt(0) == '['){
-                                                                                        updateDate(s1.substring(1, s1.length() - 1).split(","));
+                                                                                        updateData(s1.substring(1, s1.length() - 1).split(","),true);
                                                                                     }
 
 
@@ -346,7 +284,7 @@ public class RealDataFragmentNew extends Fragment {
                                                                                         // 表明是实时数据
                                                                                         System.out.println("此为一条完整的实时数据");
 //                                                                                        s1 = s1.replaceAll("[{}]", "");
-                                                                                        updateDate(s1.substring(1, s1.length() - 1).split(","));
+                                                                                        updateData(s1.substring(1, s1.length() - 1).split(","),false);
                                                                                         isRealData = true;
                                                                                     } else {
                                                                                         isRealData = false;
@@ -375,8 +313,6 @@ public class RealDataFragmentNew extends Fragment {
                         }
                     }, 500);
                 }
-
-
             }
         }
     }

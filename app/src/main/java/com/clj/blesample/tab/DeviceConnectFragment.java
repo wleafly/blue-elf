@@ -143,7 +143,6 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        ((MyApplication)getActivity().getApplication()).setState(1);
         if(view == null) {
             view = inflater.inflate(R.layout.device_connect_list2, null);
             v = view;
@@ -161,7 +160,14 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
         deviceName3 = v.findViewById(R.id.txt_name3);
         usableTitle = v.findViewById(R.id.usable_title);
 
+        Button button = view.findViewById(R.id.transfer);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                ((MyApplication)getActivity().getApplication()).setState(1);
 
+            }
+        });
         return view;
     }
 
