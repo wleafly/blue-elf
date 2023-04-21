@@ -237,12 +237,11 @@
             android:layout_gravity="center">
 
             <TextView
-                android:id="@+id/text2"
+                android:id="@+id/time1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="3min"
                 android:textColor="@color/black">
             </TextView>
             <LinearLayout
@@ -294,12 +293,11 @@
             android:background="@drawable/layout_bottom_border">
 
             <TextView
-                android:id="@+id/text4"
+                android:id="@+id/time2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
                 android:gravity="center"
-                android:text="2min"
                 android:textColor="@color/black"
                 android:background="@drawable/layout_bottom_border">
             </TextView>
@@ -309,309 +307,9 @@
 
 
 
-    <!--    ORP数据框  -->
+    <!--    数据框    -->
     <LinearLayout
-        android:id="@+id/special_ORP"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="@drawable/layout_border_style_shadow"
-        android:elevation="5dp"
-        android:paddingLeft="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:layout_marginTop="10dp"
-        android:orientation="vertical"
-        android:visibility="gone">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/layout_bottom_border"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:paddingRight="10dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_gravity="center">
-
-                <TextView
-                    android:id="@+id/orp_data"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="#838383">
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/layout_bottom_border"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:paddingRight="10dp"
-                android:layout_marginTop="4dp"
-                android:layout_marginBottom="4dp"
-                android:layout_gravity="center">
-
-                <TextView
-                    android:id="@+id/orp_interval"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="#838383">
-
-                </LinearLayout>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="4dp"
-                android:layout_weight="1"
-                android:orientation="horizontal"
-                android:paddingRight="10dp"
-                android:layout_gravity="center"
-                android:background="@drawable/layout_bottom_border">
-
-                <TextView
-                    android:id="@+id/orp_test"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text=""
-                    android:textColor="@color/black"
-                    android:background="@drawable/layout_bottom_border">
-                </TextView>
-            </LinearLayout>
-
-        </LinearLayout>
-
-
-
-    </LinearLayout>
-
-    <!--    COD数据框    -->
-    <LinearLayout
-        android:id="@+id/special_data"
-        android:layout_width="match_parent"
-        android:layout_height="120dp"
-        android:background="@drawable/layout_border_style_shadow"
-        android:elevation="5dp"
-        android:paddingLeft="10dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:paddingBottom="2dp"
-        android:visibility="gone"
-        android:orientation="horizontal">
-
-        <!--        COD(浊度,BOD)        -->
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:paddingRight="10dp"
-            android:layout_gravity="center"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:background="@drawable/layout_bottom_border">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/special_BOD"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text=""
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="#000000">
-                </LinearLayout>
-                <TextView
-                    android:id="@+id/special2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text=""
-                    android:textColor="@color/black">
-                </TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:background="#838383">
-
-            </LinearLayout>
-            <!--            <TextView-->
-            <!--                android:layout_marginBottom="10dp"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:gravity="center"-->
-            <!--                android:textSize="18dp"-->
-            <!--                android:text="PH">-->
-            <!--            </TextView>-->
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/layout_bottom_border"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:paddingRight="10dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:layout_gravity="center">
-
-            <TextView
-                android:id="@+id/special1"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text=""
-                android:textColor="@color/black">
-            </TextView>
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:background="#838383">
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@drawable/layout_bottom_border"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:paddingRight="10dp"
-            android:layout_marginTop="4dp"
-            android:layout_marginBottom="4dp"
-            android:layout_gravity="center">
-
-            <TextView
-                android:id="@+id/special_temp"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:gravity="center"
-                android:text=""
-                android:textColor="@color/black">
-            </TextView>
-            <LinearLayout
-                android:layout_width="1dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:background="#838383">
-
-            </LinearLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_margin="4dp"
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:paddingRight="10dp"
-            android:layout_gravity="center"
-            android:background="@drawable/layout_bottom_border">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:orientation="vertical">
-                <TextView
-                    android:id="@+id/special_time1"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text=""
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="0.5dp"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:background="#000000">
-                </LinearLayout>
-                <TextView
-                    android:id="@+id/special_time2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:gravity="center"
-                    android:layout_weight="1"
-                    android:text=""
-                    android:textColor="@color/black">
-                </TextView>
-            </LinearLayout>
-
-            <!--            <TextView-->
-            <!--                android:id="@+id/special_time2"-->
-            <!--                android:layout_width="match_parent"-->
-            <!--                android:layout_height="match_parent"-->
-            <!--                android:layout_weight="1"-->
-            <!--                android:gravity="center"-->
-            <!--                android:text=""-->
-            <!--                android:textColor="@color/black"-->
-            <!--                android:background="@drawable/layout_bottom_border">-->
-            <!--            </TextView>-->
-        </LinearLayout>
-
-    </LinearLayout>
-
-
-
-
-
-
-<!--    多参数的温度和时间数据框    -->
-    <LinearLayout
-        android:id="@+id/whole_data_linear"
+        android:id="@+id/linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/layout_border_style_shadow"
@@ -686,7 +384,7 @@
             </LinearLayout>
 
             <com.github.mikephil.charting.charts.LineChart
-                android:id="@+id/dy_line_chart"
+                android:id="@+id/chart"
                 android:layout_width="match_parent"
                 android:layout_height="400dp"
                 android:layout_marginBottom="20dp"
@@ -696,225 +394,297 @@
 
 
 
-    </LinearLayout>
 
-<!--    多参数的数值框     -->
+    </LinearLayout>
+    <!--    数据框2    -->
     <LinearLayout
-        android:id="@+id/pro_data"
+        android:id="@+id/linear2"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_border_style_shadow"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
-        android:layout_marginTop="20dp"
-        android:background="@drawable/layout_border_style_shadow"
-        android:elevation="5dp"
+        android:layout_marginTop="10dp"
         android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:orientation="horizontal">
+            android:layout_height="wrap_content">
 
-            <LinearLayout
-                android:layout_width="match_parent"
+            <TextView
+                android:id="@+id/main_param2"
+                android:text="ORP"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:textColor="@color/black" />
+            <View
+                android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/value2"
+                android:text="10.2mv"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:textColor="@color/black" />
 
-                <TextView
-                    android:id="@+id/pro2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/data_COD"
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="#838383">
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/pro3"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/data_COD_ZS"
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="#838383">
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/pro4"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/data_EC_salinity"
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="#838383">
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/pro5"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/data_PH"
-                    android:textColor="@color/black">
-                </TextView>
-
-            </LinearLayout>
-
+            <CheckBox
+                android:id="@+id/chat_show_or_fold2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="30dp"
+                android:button="@null"
+                android:background="@drawable/chat_fold" />
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/hide_content2"
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:layout_marginBottom="10dp"
-            android:orientation="horizontal">
-
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp">
+                <TextView
+                    android:id="@+id/temperature2"
+                    android:text="温度：26℃"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
 
                 <TextView
-                    android:id="@+id/pro6"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/data_ORP_0"
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="#838383">
-
-                </LinearLayout>
+                    android:id="@+id/address2"
+                    android:text="地址：6"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
             </LinearLayout>
 
-            <LinearLayout
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart2"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/pro7"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/data_DO"
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="#838383">
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/pro8"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/data_NH"
-                    android:textColor="@color/black">
-                </TextView>
-                <LinearLayout
-                    android:layout_width="1dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:background="#838383">
-
-                </LinearLayout>
-
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal"
-                android:layout_weight="1">
-
-                <TextView
-                    android:id="@+id/pro9"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_weight="1"
-                    android:gravity="center"
-                    android:text="@string/data_ZS"
-                    android:textColor="@color/black">
-                </TextView>
-
-            </LinearLayout>
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"/>
 
         </LinearLayout>
+
+
+
+
+    </LinearLayout>
+    <!--    数据框3    -->
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_border_style_shadow"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/main_param3"
+                android:text="ORP"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:textColor="@color/black" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/value3"
+                android:text="10.2mv"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/chat_show_or_fold3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="30dp"
+                android:button="@null"
+                android:background="@drawable/chat_fold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hide_content3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp">
+                <TextView
+                    android:id="@+id/temperature3"
+                    android:text="温度：26℃"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/address3"
+                    android:text="地址：6"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart3"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+    <!--    COD情况    -->
+    <LinearLayout
+        android:id="@+id/linear_special"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/layout_border_style_shadow"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/main_param_special"
+                android:text="ORP"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:textColor="@color/black" />
+            <View
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1" />
+            <TextView
+                android:id="@+id/value_special"
+                android:text="10.2mv"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:gravity="center"
+                android:textColor="@color/black" />
+
+            <CheckBox
+                android:id="@+id/chat_show_or_fold_special"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="30dp"
+                android:button="@null"
+                android:background="@drawable/chat_fold" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/hide_content_special"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp">
+                <TextView
+                    android:id="@+id/temperature1"
+                    android:text="温度：26℃"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/address_special"
+                    android:text="地址：6"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingHorizontal="20dp">
+                <TextView
+                    android:id="@+id/bod_special"
+                    android:text="BOD"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+                <View
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1" />
+
+                <TextView
+                    android:id="@+id/electric_special"
+                    android:text="电量"
+                    android:textColor="@color/black"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+            <com.github.mikephil.charting.charts.LineChart
+                android:id="@+id/chart_special"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_marginBottom="20dp"
+                android:layout_weight="1"/>
+
+        </LinearLayout>
+
+
 
 
     </LinearLayout>
 
-<!--    GPS    -->
     <LinearLayout
         android:id="@+id/lng_and_lat"
         android:layout_width="match_parent"
@@ -943,40 +713,7 @@
 
     </LinearLayout>
 
-<!--     折线图框      -->
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:orientation="vertical"-->
-<!--        android:layout_marginTop="20dp"-->
-<!--        android:layout_marginLeft="10dp"-->
-<!--        android:layout_marginRight="10dp"-->
-<!--        android:layout_marginBottom="10dp"-->
-<!--        android:background="@drawable/layout_border_style_shadow"-->
-<!--        android:elevation="5dp">-->
 
-<!--        <TextView-->
-<!--            android:id="@+id/linechart_name"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:text="@string/real_data"-->
-<!--            android:layout_marginLeft="10dp"-->
-<!--            android:layout_marginTop="10dp"-->
-<!--            android:layout_marginBottom="10dp"-->
-<!--            android:textColor="@color/black"-->
-<!--            android:textSize="16dp">-->
-<!--        </TextView>-->
-
-<!--        <com.github.mikephil.charting.charts.LineChart-->
-<!--            android:id="@+id/dy_line_chart_demo"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="400dp"-->
-<!--            android:layout_marginBottom="20dp"-->
-<!--            android:layout_weight="1"/>-->
-
-
-
-<!--    </LinearLayout>-->
 
 
 </LinearLayout>

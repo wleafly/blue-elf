@@ -143,6 +143,7 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
+        ((MyApplication)getActivity().getApplication()).setState(1);
         if(view == null) {
             view = inflater.inflate(R.layout.device_connect_list2, null);
             v = view;
@@ -390,7 +391,7 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
             public void onScanFinished(List<BleDevice> scanResultList) {
                 img_loading.clearAnimation();
                 img_loading.setVisibility(View.INVISIBLE);
-                btn_scan.setText(getString(R.string.start_scan));
+//                btn_scan.setText(getString(R.string.start_scan));
                 mWaveSwipeRefreshLayout.setRefreshing(false);
             }
         });

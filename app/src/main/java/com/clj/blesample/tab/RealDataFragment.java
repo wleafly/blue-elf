@@ -2014,7 +2014,6 @@ public class RealDataFragment extends Fragment {
                                                             @Override
                                                             public void run() {
                                                                 System.out.println("读取设备地址成功");
-
                                                             }
                                                         });
                                                     }

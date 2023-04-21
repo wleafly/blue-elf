@@ -111,7 +111,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private FragmentTransaction fragmentTransaction;
     private Fragment selectedFragment = null;
 
-    private int state = 0;
+    private int state = 1;
 
     // 蓝牙FastBle的初始化
     @Override
@@ -236,8 +236,28 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     case R.id.item_real_data:
                         System.out.println("MainActivity的state:"+state);
                         if (state == 0) {
+                            if (realDataFragment.isAdded()) {
+                                System.out.println("RealDataFragment已经存在");
+                                realDataFragment.onResume();
+                            }
+                            if (deviceConnectFragment.isAdded()) {
+                                System.out.println("deviceConnectFragment已经存在");
+                            }
+                            if (deviceSettingFragment.isAdded()) {
+                                System.out.println("deviceSettingFragment已经存在");
+                            }
                             selectedFragment = new RealDataFragment();
                         } else if (state == 1) {
+                            if (realDataFragmentNew.isAdded()) {
+                                System.out.println("RealDataFragment已经存在");
+                                realDataFragmentNew.onResume();
+                            }
+                            if (deviceConnectFragment.isAdded()) {
+                                System.out.println("deviceConnectFragment已经存在");
+                            }
+                            if (deviceSettingFragment.isAdded()) {
+                                System.out.println("deviceSettingFragment已经存在");
+                            }
                             selectedFragment = new RealDataFragmentNew();
                         }
 
@@ -248,12 +268,50 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
                     case R.id.item_device_connect:
                         System.out.println("你点击可deviceConnect");
+                        if (state == 0){
+                            if (realDataFragment.isAdded()) {
+                                System.out.println("RealDataFragment已经存在");
+                            }
+                            if (deviceSettingFragment.isAdded()) {
+                                System.out.println("deviceSettingFragment已经存在");
+                            }
+                        } else if (state == 1){
+                            if (realDataFragmentNew.isAdded()) {
+                                System.out.println("RealDataFragment已经存在");
+                            }
+                            if (deviceSettingFragment.isAdded()) {
+                                System.out.println("deviceSettingFragment已经存在");
+                            }
+                        }
                         selectedFragment = new DeviceConnectFragment();
                         mVp.setCurrentItem(1);
                         break;
 
                     case R.id.item_device_setting:
                         System.out.println("你点击可deviceSetting");
+                        if (state == 0){
+                            if (realDataFragment.isAdded()) {
+                                System.out.println("RealDataFragment已经存在");
+                            }
+                            if (deviceConnectFragment.isAdded()) {
+                                System.out.println("deviceConnectFragment已经存在");
+                            }
+                            if (deviceSettingFragment.isAdded()) {
+                                System.out.println("deviceSettingFragment已经存在");
+                                deviceSettingFragment.onResume();
+                            }
+                        } else if (state==1) {
+                            if (realDataFragmentNew.isAdded()) {
+                                System.out.println("RealDataFragment已经存在");
+                            }
+                            if (deviceConnectFragment.isAdded()) {
+                                System.out.println("deviceConnectFragment已经存在");
+                            }
+                            if (deviceSettingFragment.isAdded()) {
+                                System.out.println("deviceSettingFragment已经存在");
+                                deviceSettingFragment.onResume();
+                            }
+                        }
                         selectedFragment = new DeviceSettingFragment();
                         mVp.setCurrentItem(2);
                         break;

@@ -24,7 +24,7 @@ public class SplashActivity extends Activity {
 
         TextView t = (TextView) findViewById(R.id.textView);
 
-        CountDownTimer timer = new CountDownTimer(5000, 1000) {
+        CountDownTimer timer = new CountDownTimer(1000, 1000) {
             public void onTick(long millisUntilFinished) {
                 t.setText(" " + millisUntilFinished / 1000 + "  S ");
             }
