@@ -90,7 +90,7 @@ public class ChartAdapter extends RecyclerView.Adapter<ChartAdapter.ViewHolder> 
         holder.value.setText(chart.getValue());
         holder.param.setText(chart.getParam());
         holder.address.setText("地址："+chart.getAddress());
-        holder.temperature.setText("温度："+chart.getAddress()+"℃");
+        holder.temperature.setText("温度："+chart.getTemperature()+"℃");
         if (isNeedCreateChat){
             DyLineChartUtils chartUtil = new DyLineChartUtils(holder.chart, "", Color.BLUE, context);
             chartUtil.setYAxis(chart.getMax(), 0, 8);
@@ -114,6 +114,8 @@ public class ChartAdapter extends RecyclerView.Adapter<ChartAdapter.ViewHolder> 
     }
 
     public void updateCodChart(int position,double value,String temperature,String mud,String bod){
+        System.out.println(position);
+        System.out.println(chartList);
         Chart chart = chartList.get(position);
         DyLineChartUtils chartUtil = chart.getChartUtil();
         chartUtil.addEntry(value);

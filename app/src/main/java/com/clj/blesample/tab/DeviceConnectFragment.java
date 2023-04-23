@@ -539,22 +539,21 @@ public class DeviceConnectFragment extends Fragment implements View.OnClickListe
 
                                                                         @Override
                                                                         public void onCharacteristicChanged(final byte[] data) {
-                                                                                System.out.println("fa指令开始读取地址和设备类型信息...");
+                                                                                System.out.println("执行到onCharacteristicChanged方法");
                                                                                 new Handler().postDelayed(new Runnable() {
                                                                                     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN_MR2)
                                                                                     @Override
                                                                                     public void run() {
                                                                                         String type = HexUtil.byteToString(data);
-                                                                                        System.out.println("设备类型如下：");
-                                                                                        System.out.println(type);
+                                                                                        System.out.println("设备类型"+type);
                                                                                         if (type.contains("[MANy]")){
                                                                                             //通过设置全局变量修改实时数据fragment
                                                                                             System.out.println("执行切换碎片语句");
                                                                                             GlobalData.isNewDevice = true;
                                                                                             state = 1;
                                                                                             ((MyApplication)getActivity().getApplication()).setState(state);
-                                                                                            BottomAdapter adapter = ((MainActivity) getActivity()).getAdapter();
-                                                                                            adapter.updateFragment(0,new RealDataFragmentNew());
+//                                                                                            BottomAdapter adapter = ((MainActivity) getActivity()).getAdapter();
+//                                                                                            adapter.updateFragment(0,new RealDataFragmentNew());
 //                                                                                                System.out.println(adapter.getFragments());
                                                                                         }
 

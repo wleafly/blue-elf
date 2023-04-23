@@ -6,6 +6,7 @@ import android.bluetooth.BluetoothGattService;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.preference.TwoStatePreference;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.annotation.RequiresApi;
@@ -17,6 +18,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.clj.blesample.R;
 import com.clj.blesample.adapter.ChartAdapter;
@@ -47,7 +49,7 @@ public class RealDataFragmentNew extends Fragment {
     private Boolean isRealData = false; // 是实时数据
     private List paramIdList = new ArrayList<String>();
     private String[] paramArr = new String[]{"","DDM_μ","DDM_m","PHG","ORP","RDO","ION","ZS","DDM_S","COD","CL","CHLO","BGA","TPS","TSS","OIL","BOD"};
-    private String[] paramArrChinese = new String[]{"","电导率","电导率","PH","ORP","溶解氧","铵氮/离子类","浊度","盐度","COD","余氯","叶绿素","蓝绿藻","透明度","悬浮物","水中油","BOD"};
+    private String[] paramArrChinese = new String[]{"","电导率","电导率","PH","ORP","溶解氧","铵氮/离子类"," ","盐度","COD","余氯","叶绿素","蓝绿藻","透明度","悬浮物","水中油","BOD"};
     private String[] unitArr = new String[]{"","μS/cm","mS/cm","","mV","mg/L","mg/L","NTV","PSU","mg/L","mg/L","μg/L","Kcells/mL","mm","mg/L","mg/L",""};
     // 单参数数据上下限：占位符，电导率1，电导率2，PH，ORP，溶解氧，氨氮，浊度，盐度，化学需氧量COD,余氯，，叶绿素，蓝绿藻，透明度，悬浮物，水中油,BOD
     private int[] chartMaxArr = {0,100, 100, 14,  100, 20,  100,  100,  70, 100,10,  400,  300,  100,  100, 40, 500};
@@ -70,7 +72,7 @@ public class RealDataFragmentNew extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        ImageView sensor_type = view.findViewById(R.id.sensor_type);
+        TextView sensor_type = view.findViewById(R.id.sensor_type);
         time1=view.findViewById(R.id.time1);
         time2=view.findViewById(R.id.time2);
 
@@ -80,9 +82,10 @@ public class RealDataFragmentNew extends Fragment {
         chart_recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
         adapter = new ChartAdapter(chartList,getActivity());
         chart_recyclerView.setAdapter(adapter);
+        getDeviceInfo();
 
 
-        sensor_type.setOnClickListener(new View.OnClickListener() {
+        sensor_type.setOnClickListener(new View.OnClickListener() { //测试用数据，头像作为启动按钮
             @Override
             public void onClick(View view) {
                 String[][] fakeData = new String[][]{new String[]{"3","0","9"},new String[]{"6","0","6"},new String[]{"16","0","4"},
@@ -107,14 +110,10 @@ public class RealDataFragmentNew extends Fragment {
                                 }
                             }
                         });
-
-
-
                     }
                 },0,1500);
             }
         });
-        getDeviceInfo();
 
     }
 
@@ -143,20 +142,24 @@ public class RealDataFragmentNew extends Fragment {
             System.out.println(paramArr[Integer.parseInt(numArr[2])]);
             adapter.notifyDataSetChanged();
         }else {
+            if(!paramIdList.contains(numArr[0])){
+                Toast.makeText(getActivity(),"地址"+numArr[0]+"未声明",Toast.LENGTH_SHORT).show();
+            }
+
             if (isFirstData){ //第一条带花括号的数据，后两个代表时间
                 time1.setText(numArr[numArr.length-2]+"min");
                 time2.setText(numArr[numArr.length-1]+"min");
                 isFirstData = false;
                 adapter.setNeedCreateChat(false);
-            }else {
-                if (numArr.length==6){//3ORP,4普遍,6COD
-                    adapter.updateCodChart(paramIdList.indexOf(numArr[0]),Double.parseDouble(numArr[1]),numArr[2],numArr[3],numArr[4]); //更新表格数据
+            }else { //带花括号的数据，排除第一条
+                if (numArr.length==6){//长度为3代表是ORP,4是普遍情况,6是COD
+                    adapter.updateCodChart(paramIdList.indexOf(numArr[0]),Double.parseDouble(numArr[1]),numArr[2],numArr[3],numArr[4]); //更新表格数据，需要加入浊度和BOD
                 }else {
                     adapter.updateChart(paramIdList.indexOf(numArr[0]),Double.parseDouble(numArr[1]),numArr[2]); //更新表格数据
                 }
-
-
             }
+
+
         }
     }
 

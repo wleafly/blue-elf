@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#BBFFD6"
+    android:background="@mipmap/ic_real_background"
     android:scrollbars="none"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:wave="http://schemas.android.com/apk/res-auto">
@@ -26,21 +26,22 @@
         android:orientation="horizontal">
 
         <LinearLayout
+
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:layout_gravity="center"
             android:gravity="center">
-            <ImageView
+            <TextView
                 android:id="@+id/sensor_type"
+                android:text="新设备"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:gravity="center"
                 android:layout_width="80dp"
                 android:layout_height="80dp"
-                android:background="@mipmap/type_0">
-            </ImageView>
-
-
-
-
+                android:background="@drawable/united_icon_style">
+            </TextView>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -56,8 +57,7 @@
                 android:text=""
                 android:textSize="14dp"
                 android:textColor="@color/black"
-                android:layout_marginBottom="2dp"
-                >
+                android:layout_marginBottom="2dp">
             </TextView>
             <TextView
                 android:id="@+id/device_address"
@@ -66,8 +66,7 @@
                 android:text=""
                 android:textSize="14dp"
                 android:layout_marginBottom="2dp"
-                android:textColor="@color/black"
-                >
+                android:textColor="@color/black">
             </TextView>
             <TextView
                 android:id="@+id/device_type"
@@ -75,8 +74,7 @@
                 android:layout_height="wrap_content"
                 android:text=""
                 android:textSize="14dp"
-                android:textColor="@color/black"
-                >
+                android:textColor="@color/black">
             </TextView>
         </LinearLayout>
         <Button
